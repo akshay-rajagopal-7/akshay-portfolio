@@ -3,151 +3,505 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshay Rajagopal — Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Darvin & the Pulse</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cinzel:wght@500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --green:#10b981;--gold:#f59e0b;--ink:#1a201d;--body:#454e49;--mute:#8a948e;
-    --line:#e7eae8;--bg:#fbfcfb;--card:#ffffff;
-    --serif:'Newsreader',Georgia,serif;--sans:'IBM Plex Sans',-apple-system,sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:840px;margin:0 auto;padding:0 28px}
-  header{padding:80px 0 18px}
-  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:16px}
-  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,6vw,52px);line-height:1.05;letter-spacing:-.02em;color:var(--ink);margin-bottom:18px}
-  header .bio{max-width:600px;color:var(--body);font-size:16px}
-  .meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px;color:var(--mute)}
-  .meta b{color:var(--ink);font-weight:500}
-  .rule{height:1px;background:var(--line);margin:48px 0}
-  section{margin-bottom:8px}
-  .sec-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:22px}
-  .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px;margin-bottom:18px;transition:border-color .25s,box-shadow .25s}
-  .item:hover{border-color:#d3d9d6;box-shadow:0 6px 22px rgba(26,32,29,.05)}
-  .item-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
-  .item h3{font-family:var(--serif);font-size:23px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
-  .tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 10px;border-radius:20px;white-space:nowrap}
-  .tag.live{color:var(--green);background:rgba(16,185,129,.1)}
-  .tag.beta{color:var(--gold);background:rgba(245,158,11,.12)}
-  .tag.doc{color:var(--mute);background:#f1f3f2}
-  .item .role{font-size:13px;color:var(--mute);margin-top:3px}
-  .item p{margin:16px 0 18px;color:var(--body);font-size:14.5px;max-width:640px}
-  .stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
-  .chip{font-size:12px;color:var(--body);background:#f4f6f5;border:1px solid var(--line);border-radius:5px;padding:3px 9px}
-  .agents{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px;font-size:13px;color:var(--mute)}
-  .agents b{color:var(--ink);font-weight:500}
-  .links{display:flex;flex-wrap:wrap;gap:10px}
-  .lnk{font-size:13px;font-weight:500;text-decoration:none;padding:9px 16px;border-radius:7px;border:1px solid var(--line);color:var(--ink);transition:all .2s;display:inline-flex;align-items:center;gap:7px}
-  .lnk.solid{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .lnk.solid:hover{background:#000}
-  .lnk:hover{border-color:#c8cfcb;background:#f7f9f8}
-  .lnk.off{color:var(--mute);cursor:default;background:#f7f8f7}
-  .lnk.off:hover{border-color:var(--line);background:#f7f8f7}
-  footer{padding:44px 0 70px;border-top:1px solid var(--line);margin-top:40px}
-  footer .flinks{display:flex;flex-wrap:wrap;gap:20px;font-size:13px}
-  footer a{color:var(--mute);text-decoration:none;transition:color .2s}
-  footer a:hover{color:var(--ink)}
-  footer .fine{margin-top:18px;font-size:12px;color:var(--mute)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07090d;--surface:#0e1118;--border:#1c2535;
+  --d:#e05a4a;--d-bg:rgba(224,90,74,0.09);--d-mid:rgba(224,90,74,0.22);
+  --w:#4a8fe0;--w-bg:rgba(74,143,224,0.09);--w-mid:rgba(74,143,224,0.22);
+  --a:#c8a84b;--a-bg:rgba(200,168,75,0.09);--a-mid:rgba(200,168,75,0.25);
+  --text:#c0bdb4;--dim:#44505f;--bright:#edeae3;--green:#4aaa70;
+}
+html,body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;height:100vh;overflow:hidden}
+.app{display:grid;grid-template-columns:340px 1fr;grid-template-rows:56px 1fr;height:100vh}
+
+/* topbar */
+.topbar{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--border);background:rgba(7,9,13,0.95);backdrop-filter:blur(20px);z-index:10}
+.brand-name{font-family:'Cinzel',serif;font-size:15px;color:var(--a);letter-spacing:0.1em}
+.brand-sub{font-size:9px;color:var(--dim);letter-spacing:0.2em;text-transform:uppercase;margin-top:1px}
+.tbtns{display:flex;gap:6px}
+.tbtn{width:30px;height:30px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;font-size:13px;transition:all 0.2s;display:flex;align-items:center;justify-content:center}
+.tbtn:hover{border-color:var(--a-mid);color:var(--a);background:var(--a-bg)}
+
+/* sidebar */
+.sidebar{border-right:1px solid var(--border);background:var(--surface);overflow-y:auto;padding:18px}
+.sidebar::-webkit-scrollbar{width:3px}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border)}
+.slabel{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.mode-row{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:16px}
+.mbtn{flex:1;padding:7px;background:transparent;border:none;color:var(--dim);font-size:10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.15s}
+.mbtn.on{background:var(--a-bg);color:var(--a)}
+.fld{margin-bottom:9px}
+.fld label{display:block;font-size:10px;color:var(--dim);margin-bottom:3px}
+input,textarea{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:5px;color:var(--bright);font-family:'Inter',sans-serif;font-size:12px;padding:8px 10px;width:100%;outline:none;transition:border-color 0.15s}
+input:focus,textarea:focus{border-color:var(--a-mid)}
+input::placeholder,textarea::placeholder{color:var(--dim)}
+textarea{resize:none;height:68px;line-height:1.5}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.flags-title{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim);margin:12px 0 7px}
+.flags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:14px}
+.flag{font-size:10px;padding:3px 8px;border-radius:10px;border:1px solid var(--border);cursor:pointer;color:var(--dim);transition:all 0.15s;user-select:none}
+.flag.on{border-color:var(--a);color:var(--a);background:var(--a-bg)}
+.go-btn{width:100%;padding:12px;background:transparent;border:1px solid var(--a);border-radius:6px;color:var(--a);font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.12em;cursor:pointer;transition:all 0.2s}
+.go-btn:hover:not(:disabled){background:var(--a-bg);box-shadow:0 0 20px rgba(200,168,75,0.1)}
+.go-btn:disabled{opacity:0.3;cursor:not-allowed}
+.csv-zone{border:1px dashed rgba(200,168,75,0.22);border-radius:6px;padding:24px 12px;text-align:center;cursor:pointer;margin-bottom:10px;transition:all 0.2s}
+.csv-zone:hover{border-color:rgba(200,168,75,0.4);background:var(--a-bg)}
+.csv-info{font-size:11px;color:var(--bright);background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:5px;padding:9px;margin-bottom:10px}
+
+/* arena */
+.arena{display:flex;flex-direction:column;overflow:hidden;background:var(--bg);position:relative}
+.arena::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 15% 60%,rgba(224,90,74,0.04) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 85% 60%,rgba(74,143,224,0.04) 0%,transparent 60%);pointer-events:none;z-index:0}
+
+/* empty */
+.empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;opacity:0.25;z-index:1}
+.empty-icon{font-size:36px}
+.empty-txt{font-size:12px;color:var(--dim);text-align:center;line-height:1.7}
+
+/* debate */
+.debate{flex:1;display:none;flex-direction:column;overflow:hidden;z-index:1}
+.debate.on{display:flex}
+
+/* agent bar */
+.agent-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;border-bottom:1px solid var(--border);background:rgba(7,9,13,0.7);backdrop-filter:blur(10px);flex-shrink:0}
+.ag-tag{display:flex;align-items:center;gap:8px}
+.ag-tag.ward{flex-direction:row-reverse}
+.ag-av{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.ag-av.d{background:var(--d-bg);color:var(--d);border:1px solid var(--d-mid)}
+.ag-av.w{background:var(--w-bg);color:var(--w);border:1px solid var(--w-mid)}
+.ag-av.a{background:var(--a-bg);color:var(--a);border:1px solid var(--a-mid)}
+.ag-name{font-size:11px;font-weight:600}
+.ag-role{font-size:9px;color:var(--dim);letter-spacing:0.08em;text-transform:uppercase}
+.ag-tag.ward .ag-name,.ag-tag.ward .ag-role{text-align:right}
+.ag-dot{width:5px;height:5px;border-radius:50%;background:var(--border);transition:all 0.3s;display:inline-block;margin-right:4px}
+.ag-tag.darvin.active .ag-dot{background:var(--d);animation:blip 1s infinite}
+.ag-tag.ward.active .ag-dot{background:var(--w);animation:blip 1s infinite}
+.ag-tag.darvin.done .ag-dot,.ag-tag.ward.done .ag-dot{background:var(--green)}
+.ag-stxt{font-size:9px;color:var(--dim)}
+@keyframes blip{0%,100%{opacity:1}50%{opacity:0.3}}
+.vs{font-family:'Cinzel',serif;font-size:11px;color:var(--dim);background:var(--surface);border:1px solid var(--border);padding:4px 12px;border-radius:10px}
+
+/* messages */
+.msgs{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:10px}
+.msgs::-webkit-scrollbar{width:3px}
+.msgs::-webkit-scrollbar-thumb{background:var(--border)}
+
+/* message */
+.msg{display:flex;gap:10px;animation:mIn 0.3s ease both}
+.msg.d{flex-direction:row}
+.msg.w{flex-direction:row-reverse}
+@keyframes mIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.msg-av{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:2px}
+.msg.d .msg-av{background:var(--d-bg);color:var(--d);border:1px solid var(--d-mid)}
+.msg.w .msg-av{background:var(--w-bg);color:var(--w);border:1px solid var(--w-mid)}
+.msg-body{display:flex;flex-direction:column;max-width:64%}
+.msg.w .msg-body{align-items:flex-end}
+.msg-name{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3px;opacity:0.55}
+.msg.d .msg-name{color:var(--d)}
+.msg.w .msg-name{color:var(--w)}
+.msg-bubble{padding:10px 14px;border-radius:10px;font-size:13px;line-height:1.78;word-wrap:break-word}
+.msg.d .msg-bubble{background:var(--d-bg);border:1px solid var(--d-mid);border-top-left-radius:2px;color:#f0ddd8}
+.msg.w .msg-bubble{background:var(--w-bg);border:1px solid var(--w-mid);border-top-right-radius:2px;color:#d8e4f5}
+
+/* typing */
+.typ{display:flex;gap:10px}
+.typ.w{flex-direction:row-reverse}
+.typ-av{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}
+.typ.d .typ-av{background:var(--d-bg);color:var(--d);border:1px solid var(--d-mid)}
+.typ.w .typ-av{background:var(--w-bg);color:var(--w);border:1px solid var(--w-mid)}
+.typ-dots{display:flex;gap:4px;padding:10px 14px;border-radius:10px;align-items:center}
+.typ.d .typ-dots{background:var(--d-bg);border:1px solid var(--d-mid)}
+.typ.w .typ-dots{background:var(--w-bg);border:1px solid var(--w-mid)}
+.td{width:6px;height:6px;border-radius:50%;animation:tdot 1.2s infinite}
+.typ.d .td{background:var(--d)}
+.typ.w .td{background:var(--w)}
+.td:nth-child(2){animation-delay:0.2s}.td:nth-child(3){animation-delay:0.4s}
+@keyframes tdot{0%,80%,100%{opacity:0.2;transform:scale(0.7)}40%{opacity:1;transform:scale(1)}}
+
+/* cursor */
+.tc::after{content:'▋';animation:cur 0.7s infinite;color:inherit;opacity:0.5;font-size:0.85em;margin-left:1px}
+@keyframes cur{0%,100%{opacity:0.5}50%{opacity:0}}
+
+/* athena panel */
+.a-panel{display:none;border-top:1px solid var(--a-mid);background:linear-gradient(to bottom,rgba(200,168,75,0.06),transparent);padding:14px 20px;flex-shrink:0;max-height:40%;overflow-y:auto}
+.a-panel.on{display:block}
+.a-panel::-webkit-scrollbar{width:3px}
+.a-panel::-webkit-scrollbar-thumb{background:var(--a-mid)}
+.a-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.a-av{width:34px;height:34px;border-radius:8px;background:var(--a-bg);border:1px solid var(--a-mid);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--a)}
+.a-title{font-size:11px;font-weight:600;color:var(--a)}
+.a-role{font-size:9px;color:var(--dim);letter-spacing:0.1em;text-transform:uppercase}
+.a-words{display:flex;flex-direction:column;gap:7px}
+.a-word{padding:10px 14px;border-radius:8px;font-size:13px;line-height:1.75;background:rgba(200,168,75,0.07);border:1px solid var(--a-mid);color:#f0e8cc;animation:mIn 0.4s ease both}
+
+/* verdict */
+.v-strip{border-top:1px solid var(--a-mid);background:rgba(7,9,13,0.96);backdrop-filter:blur(20px);padding:14px 20px;flex-shrink:0}
+.v-row{display:flex;align-items:center;justify-content:space-between;background:rgba(200,168,75,0.08);border:1px solid var(--a-mid);border-radius:8px;padding:14px 20px;animation:vIn 0.6s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 0 30px rgba(200,168,75,0.07)}
+@keyframes vIn{from{opacity:0;transform:scale(0.96)}60%{transform:scale(1.02)}to{opacity:1;transform:scale(1)}}
+.v-sep{width:1px;height:34px;background:var(--a-mid)}
+.v-lbl{font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--a);opacity:0.6;margin-bottom:4px}
+.v-badge{display:inline-block;padding:4px 12px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.07em}
+.fraud-confirmed{background:rgba(224,90,74,0.15);color:var(--d);border:1px solid var(--d)}
+.fraud-likely{background:rgba(224,160,74,0.15);color:#e09a4a;border:1px solid #e09a4a}
+.inconclusive{background:var(--a-bg);color:var(--a);border:1px solid var(--a)}
+.no-fraud{background:rgba(74,170,96,0.15);color:var(--green);border:1px solid var(--green)}
+.v-num{font-family:'Cinzel',serif;font-size:21px;color:var(--a)}
+.v-bar{width:90px;height:2px;background:rgba(255,255,255,0.07);border-radius:1px;margin-top:5px}
+.v-fill{height:100%;background:linear-gradient(to right,var(--a),#f0e060);border-radius:1px;transition:width 2s cubic-bezier(0.25,0.46,0.45,0.94);width:0}
+.v-risk{font-family:'Cinzel',serif;font-size:16px}
+.rc{color:var(--d)}.rh{color:#e09a4a}.rm{color:var(--a)}.rl{color:var(--green)}
+.new-btn{margin-top:8px;width:100%;padding:8px;background:transparent;border:1px solid var(--border);border-radius:5px;color:var(--dim);font-size:10px;letter-spacing:0.1em;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s}
+.new-btn:hover{border-color:var(--a-mid);color:var(--a)}
+
+/* modals */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center}
+.overlay.on{display:flex}
+.modal{background:#0a0c14;border:1px solid var(--border);border-radius:10px;width:460px;overflow:hidden}
+.mh{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border)}
+.mt{font-size:13px;font-weight:600;color:var(--bright)}
+.mx{background:transparent;border:none;color:var(--dim);font-size:15px;cursor:pointer;padding:3px 6px}
+.mb{padding:18px}
+.ms{margin-bottom:16px}
+.mst{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.sr{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.sl{font-size:11px;color:var(--dim);white-space:nowrap;min-width:64px}
+.si{flex:1;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:4px;color:var(--bright);font-family:'Inter',sans-serif;font-size:11px;padding:6px 9px;outline:none}
+.pr,.spr{display:flex;gap:5px}
+.pb,.sb{flex:1;padding:6px;background:transparent;border:1px solid var(--border);border-radius:4px;color:var(--dim);font-size:10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.15s}
+.pb.on,.sb.on{border-color:var(--a);color:var(--a);background:var(--a-bg)}
+.mf{display:flex;justify-content:flex-end;gap:7px;padding:12px 18px;border-top:1px solid var(--border)}
+.bc{padding:6px 14px;background:transparent;border:1px solid var(--border);border-radius:4px;color:var(--dim);font-size:11px;cursor:pointer;font-family:'Inter',sans-serif}
+.bs{padding:6px 14px;background:var(--a-bg);border:1px solid var(--a);border-radius:4px;color:var(--a);font-size:11px;cursor:pointer;font-family:'Inter',sans-serif}
+.hi{padding:10px;border:1px solid var(--border);border-radius:6px;margin-bottom:7px;display:flex;justify-content:space-between;align-items:center}
+
+/* toast */
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(10px);background:var(--surface);border:1px solid var(--a-mid);border-radius:5px;padding:7px 16px;font-size:11px;color:var(--a);opacity:0;transition:all 0.25s;z-index:200;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="app">
 
-  <header>
-    <div class="eyebrow">Forensic &amp; Audit Analytics</div>
-    <h1>Akshay Rajagopal</h1>
-    <p class="bio">I build AI-assisted forensic audit platforms and the financial tooling around them — from exception detection and evidence pipelines to working spreadsheets and process design. A selection of live systems and documents is below.</p>
-    <div class="meta">
-      <div>Role &middot; <b>Builder, Forensic Analytics</b></div>
-      <div>Stack &middot; <b>React &middot; FastAPI &middot; DuckDB &middot; Groq AI</b></div>
-      <div>Based &middot; <b>United Arab Emirates</b></div>
+<div class="topbar">
+  <div>
+    <div class="brand-name">DARVIN & THE PULSE</div>
+    <div class="brand-sub">Forensic AI Adjudication · by Akshay Rajagopal</div>
+  </div>
+  <div class="tbtns">
+    <button class="tbtn" onclick="openHistory()">🗂</button>
+    <button class="tbtn" id="xbtn" onclick="exportDebate()" style="display:none">⬇</button>
+    <button class="tbtn" onclick="openSettings()">⚙</button>
+  </div>
+</div>
+
+<div class="sidebar">
+  <div class="mode-row">
+    <button class="mbtn on" id="ms" onclick="setMode('single')">Single Finding</button>
+    <button class="mbtn" id="mc" onclick="setMode('csv')">Full Case (CSV)</button>
+  </div>
+  <div id="ps">
+    <div class="slabel">Finding Details</div>
+    <div class="g2">
+      <div class="fld"><label>Exception ID</label><input id="fex" placeholder="EX-001"/></div>
+      <div class="fld"><label>Test Name</label><input id="ftest" placeholder="Benford Law"/></div>
     </div>
-  </header>
+    <div class="g2">
+      <div class="fld"><label>Vendor</label><input id="fv" placeholder="Counterparty"/></div>
+      <div class="fld"><label>Amount</label><input id="fa" type="number" placeholder="0.00"/></div>
+    </div>
+    <div class="fld"><label>Description</label><textarea id="fd" placeholder="Describe the finding..."></textarea></div>
+    <div class="flags-title">Risk Flags</div>
+    <div class="flags">
+      <span class="flag" onclick="toggleFlag(this)">high_amount</span>
+      <span class="flag" onclick="toggleFlag(this)">weekend_transaction</span>
+      <span class="flag" onclick="toggleFlag(this)">new_vendor</span>
+      <span class="flag" onclick="toggleFlag(this)">round_number</span>
+      <span class="flag" onclick="toggleFlag(this)">duplicate_payment</span>
+      <span class="flag" onclick="toggleFlag(this)">split_transaction</span>
+      <span class="flag" onclick="toggleFlag(this)">missing_approval</span>
+      <span class="flag" onclick="toggleFlag(this)">benford_anomaly</span>
+      <span class="flag" onclick="toggleFlag(this)">unusual_timing</span>
+      <span class="flag" onclick="toggleFlag(this)">no_documentation</span>
+    </div>
+    <button class="go-btn" id="gb" onclick="convene()">Convene the Tribunal</button>
+  </div>
+  <div id="pc" style="display:none">
+    <div class="slabel">Full Case Review</div>
+    <p style="font-size:11px;color:var(--dim);line-height:1.6;margin-bottom:12px">Upload AureviaForge findings CSV.</p>
+    <div class="csv-zone" onclick="document.getElementById('cf').click()">
+      <div style="font-size:20px;margin-bottom:5px">📂</div>
+      <div style="font-size:11px;color:var(--dim)">Click to upload CSV</div>
+    </div>
+    <input type="file" id="cf" accept=".csv" style="display:none" onchange="handleCSV(this)"/>
+    <div id="cp" style="display:none;margin-bottom:10px"><div class="csv-info" id="ci"></div></div>
+    <button class="go-btn" id="gbc" onclick="conveneCSV()" style="display:none">Convene Full Case Tribunal</button>
+  </div>
+</div>
 
-  <div class="rule"></div>
-
-  <section>
-    <div class="sec-label">Platforms</div>
-
-    <div class="item">
-      <div class="item-top">
-        <div><h3>AureviaForge Engine</h3><div class="role">Forensic audit analytics platform</div></div>
-        <span class="tag live">&#9679; Live</span>
+<div class="arena">
+  <div class="empty" id="empty">
+    <div class="empty-icon">⚖</div>
+    <div class="empty-txt">Submit a finding to<br>convene the tribunal.</div>
+  </div>
+  <div class="debate" id="debate">
+    <div class="agent-bar">
+      <div class="ag-tag darvin" id="adt">
+        <div class="ag-av d">DV</div>
+        <div>
+          <div class="ag-name" style="color:var(--d)">Agent Darvin</div>
+          <div class="ag-role">Fraud Examiner</div>
+          <div style="margin-top:4px"><span class="ag-dot"></span><span class="ag-stxt" id="dst">Standing by</span></div>
+        </div>
       </div>
-      <p>A full forensic audit pipeline in the browser. Auditors upload raw transactional data and the engine automatically surfaces exceptions and anomalies, ranks them, and lets investigators attach persistent case notes to every finding &mdash; building a complete, exportable evidence trail. An integrated AI reasoning layer explains <em>why</em> each item was flagged in plain language, turning a wall of numbers into a defensible narrative. Built to handle large result sets with paginated findings (200 at a time) and one-click CSV export of findings and notes for working papers.</p>
-      <div class="stack">
-        <span class="chip">React + Vite</span><span class="chip">FastAPI</span><span class="chip">SQLite</span><span class="chip">DuckDB</span><span class="chip">Groq &middot; llama-3.3-70b</span>
-      </div>
-      <div class="links">
-        <a class="lnk solid" href="https://aureviaforge-engine-production.up.railway.app" target="_blank" rel="noopener">Open live app &rarr;</a>
-        <a class="lnk" href="https://github.com/akshay-rajagopal-7/aureviaforge-engine" target="_blank" rel="noopener">Source</a>
+      <div class="vs">VS</div>
+      <div class="ag-tag ward" id="awt" style="flex-direction:row-reverse">
+        <div class="ag-av w">WD</div>
+        <div style="text-align:right">
+          <div class="ag-name" style="color:var(--w)">Agent Ward</div>
+          <div class="ag-role">Defense Counsel</div>
+          <div style="margin-top:4px;text-align:right"><span class="ag-dot"></span><span class="ag-stxt" id="wst">Standing by</span></div>
+        </div>
       </div>
     </div>
-
-    <div class="item">
-      <div class="item-top">
-        <div><h3>Darvin &amp; the Pulse</h3><div class="role">Three-agent AI review tribunal</div></div>
-        <span class="tag beta">Beta</span>
+    <div class="msgs" id="msgs"></div>
+    <div class="a-panel" id="ap">
+      <div class="a-head">
+        <div class="a-av">AT</div>
+        <div><div class="a-title">Agent Athena — Chief Arbiter</div><div class="a-role">Final Judgment</div></div>
       </div>
-      <p>An adversarial AI tribunal that puts every forensic finding on trial before it ever reaches a report. Three distinct AI agents argue the case: Darvin prosecutes as a fraud examiner, Ward defends, and Athena weighs both sides and rules as chief arbiter. The result is a finding that has survived genuine scrutiny rather than a single model's first guess &mdash; a built-in second opinion that reduces false positives and strengthens the audit conclusion. Convened directly from any flagged exception in AureviaForge, with a courtroom-style interface, animated agents, and per-agent voice narration.</p>
-      <div class="agents">
-        <span><b>Darvin</b> &mdash; Fraud Examiner</span><span><b>Ward</b> &mdash; Defense Counsel</span><span><b>Athena</b> &mdash; Chief Arbiter</span>
-      </div>
-      <div class="links">
-        <!-- TODO: replace with live + source links once deployed -->
-        <a class="lnk off">Demo &mdash; coming soon</a>
-      </div>
+      <div class="a-words" id="aw"></div>
     </div>
-  </section>
-
-  <div class="rule"></div>
-
-  <section>
-    <div class="sec-label">Documents &amp; Models</div>
-
-    <div class="item">
-      <div class="item-top">
-        <div><h3>Petty Cash Workbook</h3><div class="role">Advanced Excel model &middot; AED</div></div>
-        <span class="tag doc">Spreadsheet</span>
-      </div>
-      <p>A production-grade petty-cash control workbook built for real project finance in AED. It tracks every transaction, reconciles staff advances against actual spend, flags variances automatically, and rolls up to live closing balances &mdash; all formula-driven, so the books stay accurate without manual recalculation. A dedicated guide sheet makes it hand-off ready for any team member. This is the spreadsheet discipline that informs the forensic engine: the same controls, made auditable.</p>
-      <div class="stack">
-        <span class="chip">Transactions</span><span class="chip">Advances Summary</span><span class="chip">Guide</span><span class="chip">Formula-driven</span>
-      </div>
-      <div class="links">
-        <a class="lnk solid" href="assets/Petty_Cash_Workbook.xlsx" download>Download .xlsx &darr;</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="item-top">
-        <div><h3>Business Process Workflow</h3><div class="role">End-to-end process model &middot; 17 slides</div></div>
-        <span class="tag doc">Deck</span>
-      </div>
-      <p>A complete operating blueprint for an app-based service business, mapped across 17 slides. It traces the full customer lifecycle &mdash; onboarding, subscription, and training delivery &mdash; and layers in the operational backbone: Six Sigma quality control, data-security handling, and the decision flow all the way up to the board. A clear demonstration of systems thinking: not just how a feature works, but how an entire business process fits together and where the controls live.</p>
-      <div class="stack">
-        <span class="chip">Process modeling</span><span class="chip">Onboarding &rarr; Retention</span><span class="chip">Six Sigma</span>
-      </div>
-      <div class="links">
-        <a class="lnk solid" href="assets/Business_Process_Workflow.pptx" download>Download .pptx &darr;</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="flinks">
-      <a href="https://github.com/akshay-rajagopal-7" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://aureviaforge-engine-production.up.railway.app" target="_blank" rel="noopener">Live app</a>
-      <!-- TODO: add LinkedIn + email -->
-      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="fine">&copy; 2026 Akshay Rajagopal</div>
-  </footer>
+    <div id="va"></div>
+  </div>
+</div>
 
 </div>
+
+<!-- SETTINGS -->
+<div class="overlay" id="sm">
+  <div class="modal">
+    <div class="mh"><div class="mt">⚙ Settings</div><button class="mx" onclick="closeSettings()">✕</button></div>
+    <div class="mb">
+      <div class="ms"><div class="mst">AI Provider</div><div class="pr"><button class="pb on" id="pg" onclick="sp('groq')">Groq</button><button class="pb" id="pc2" onclick="sp('claude')">Claude</button><button class="pb" id="po" onclick="sp('openai')">OpenAI</button></div></div>
+      <div class="ms"><div class="mst">API Keys</div>
+        <div class="sr"><span class="sl" style="color:#f55">GROQ</span><input class="si" id="kg" type="password" placeholder="gsk_..."/></div>
+        <div class="sr"><span class="sl" style="color:var(--a)">CLAUDE</span><input class="si" id="kc" type="password" placeholder="sk-ant-..."/></div>
+        <div class="sr"><span class="sl" style="color:#7ac">OPENAI</span><input class="si" id="ko" type="password" placeholder="sk-..."/></div>
+      </div>
+      <div class="ms"><div class="mst">Debate Speed</div><div class="spr"><button class="sb" id="sf" onclick="ss('fast')">Fast</button><button class="sb on" id="sn" onclick="ss('normal')">Normal</button><button class="sb" id="sl2" onclick="ss('slow')">Slow</button></div></div>
+    </div>
+    <div class="mf"><button class="bc" onclick="closeSettings()">Cancel</button><button class="bs" onclick="saveSettings()">Save</button></div>
+  </div>
+</div>
+
+<!-- HISTORY -->
+<div class="overlay" id="hm">
+  <div class="modal" style="max-height:80vh;display:flex;flex-direction:column">
+    <div class="mh"><div class="mt">🗂 Case History</div><button class="mx" onclick="closeHistory()">✕</button></div>
+    <div style="padding:14px;overflow-y:auto;flex:1" id="hl"></div>
+    <div style="padding:10px 14px;border-top:1px solid var(--border);display:flex;justify-content:space-between">
+      <button class="bc" onclick="clearHistory()" style="color:var(--d);border-color:rgba(224,90,74,0.3)">Clear</button>
+      <button class="bc" onclick="closeHistory()">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const API='http://localhost:8766';
+let cfg={prov:'groq',spd:'normal',keys:{groq:'',claude:'',openai:''}};
+let debText='';let csvRows=[];let hist=[];
+
+function loadCfg(){
+  try{const s=JSON.parse(localStorage.getItem('dtp')||'{}');if(s.prov)cfg={...cfg,...s};}catch(e){}
+  try{if(cfg.keys.groq)document.getElementById('kg').value=cfg.keys.groq;}catch(e){}
+  try{if(cfg.keys.claude)document.getElementById('kc').value=cfg.keys.claude;}catch(e){}
+  try{if(cfg.keys.openai)document.getElementById('ko').value=cfg.keys.openai;}catch(e){}
+  sp(cfg.prov);ss(cfg.spd);
+}
+function openSettings(){document.getElementById('sm').classList.add('on')}
+function closeSettings(){document.getElementById('sm').classList.remove('on')}
+function sp(p){cfg.prov=p;['g','c2','o'].forEach((x,i)=>document.getElementById('p'+x).className='pb'+(['groq','claude','openai'][i]===p?' on':''))}
+function ss(s){cfg.spd=s;['f','n','l2'].forEach((x,i)=>document.getElementById('s'+x).className='sb'+(['fast','normal','slow'][i]===s?' on':''))}
+function saveSettings(){
+  cfg.keys.groq=document.getElementById('kg').value.trim();
+  cfg.keys.claude=document.getElementById('kc').value.trim();
+  cfg.keys.openai=document.getElementById('ko').value.trim();
+  localStorage.setItem('dtp',JSON.stringify(cfg));
+  closeSettings();showToast('Settings saved');
+}
+function getSpd(){return cfg.spd==='fast'?7:cfg.spd==='slow'?24:13}
+
+function loadHist(){try{hist=JSON.parse(localStorage.getItem('dtp-h')||'[]');}catch(e){}}
+function saveHist(f,v,c,r){
+  hist.unshift({id:Date.now(),f:f.exception_id||'?',t:f.test_name||'',v,c,r,d:new Date().toLocaleString()});
+  if(hist.length>50)hist.pop();
+  localStorage.setItem('dtp-h',JSON.stringify(hist));
+}
+function openHistory(){
+  loadHist();
+  const cls={'FRAUD CONFIRMED':'fraud-confirmed','FRAUD LIKELY':'fraud-likely','INCONCLUSIVE':'inconclusive','NO FRAUD INDICATED':'no-fraud'};
+  document.getElementById('hl').innerHTML=!hist.length
+    ?'<p style="color:var(--dim);font-size:12px;text-align:center;padding:20px 0">No cases yet.</p>'
+    :hist.map(h=>`<div class="hi"><div><div style="font-size:12px;color:var(--bright);margin-bottom:2px">${h.f} · ${h.t}</div><div style="font-size:9px;color:var(--dim)">${h.d}</div></div><div style="text-align:right"><span class="v-badge ${cls[h.v]||'inconclusive'}" style="font-size:9px;padding:3px 8px;display:block;margin-bottom:3px">${h.v}</span><span style="font-size:9px;color:var(--dim)">${h.c}% · ${h.r}</span></div></div>`).join('');
+  document.getElementById('hm').classList.add('on');
+}
+function closeHistory(){document.getElementById('hm').classList.remove('on')}
+function clearHistory(){hist=[];localStorage.removeItem('dtp-h');openHistory()}
+
+function exportDebate(){
+  if(!debText)return;
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([debText],{type:'text/plain'}));
+  a.download=`tribunal-${Date.now()}.txt`;a.click();showToast('Exported');
+}
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200)}
+
+function toggleFlag(el){el.classList.toggle('on')}
+function getFlags(){return[...document.querySelectorAll('.flag.on')].map(e=>e.textContent.trim())}
+function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
+function clean(t){return t.replace(/\*\*([^*]+)\*\*/g,'$1').replace(/\*([^*]+)\*/g,'$1').replace(/#{1,6}\s/g,'').trim()}
+function splitPts(text){
+  text=clean(text);
+  const pts=text.split(/\n\s*\n/).map(p=>p.trim()).filter(p=>p.length>8);
+  if(pts.length>3)return pts;
+  return text.match(/[^.!?]+[.!?]+/g)?.map(s=>s.trim()).filter(s=>s.length>10)||[text];
+}
+function setMode(m){
+  document.getElementById('ps').style.display=m==='single'?'block':'none';
+  document.getElementById('pc').style.display=m==='csv'?'block':'none';
+  document.getElementById('ms').className='mbtn'+(m==='single'?' on':'');
+  document.getElementById('mc').className='mbtn'+(m==='csv'?' on':'');
+}
+function setAg(name,state){
+  const el=document.getElementById(name==='darvin'?'adt':'awt');
+  if(!el)return;
+  el.className='ag-tag '+name+(state==='active'?' active':state==='done'?' done':'');
+  const stxt=document.getElementById(name==='darvin'?'dst':'wst');
+  if(stxt)stxt.textContent=state==='active'?'Deliberating...':state==='done'?'Done':'Standing by';
+}
+
+function showTyping(side){
+  const msgs=document.getElementById('msgs');
+  const row=document.createElement('div');row.className=`typ ${side[0]}`;row.id='typ-'+side;
+  const av=document.createElement('div');av.className='typ-av';av.textContent=side==='darvin'?'DV':'WD';
+  const dots=document.createElement('div');dots.className='typ-dots';
+  dots.innerHTML='<div class="td"></div><div class="td"></div><div class="td"></div>';
+  row.appendChild(av);row.appendChild(dots);msgs.appendChild(row);msgs.scrollTop=msgs.scrollHeight;
+}
+function removeTyping(side){const t=document.getElementById('typ-'+side);if(t)t.remove()}
+
+async function addMsg(side,text){
+  removeTyping(side);
+  const msgs=document.getElementById('msgs');
+  const row=document.createElement('div');row.className=`msg ${side[0]}`;
+  const av=document.createElement('div');av.className='msg-av';av.textContent=side==='darvin'?'DV':'WD';
+  const body=document.createElement('div');body.className='msg-body';
+  const name=document.createElement('div');name.className='msg-name';name.textContent=side==='darvin'?'Agent Darvin':'Agent Ward';
+  const bubble=document.createElement('div');bubble.className='msg-bubble tc';
+  body.appendChild(name);body.appendChild(bubble);row.appendChild(av);row.appendChild(body);msgs.appendChild(row);
+  for(const ch of text.split('')){bubble.textContent+=ch;msgs.scrollTop=msgs.scrollHeight;await sleep(getSpd());}
+  bubble.classList.remove('tc');
+  debText+=`\n[${side.toUpperCase()}] ${text}\n`;
+}
+
+async function addAthena(text){
+  const panel=document.getElementById('ap');const words=document.getElementById('aw');
+  if(!panel.classList.contains('on')){panel.classList.add('on');await sleep(300);}
+  const b=document.createElement('div');b.className='a-word tc';words.appendChild(b);panel.scrollTop=panel.scrollHeight;
+  for(const ch of text.split('')){b.textContent+=ch;await sleep(getSpd()+3);}
+  b.classList.remove('tc');
+  debText+=`\n[ATHENA] ${text}\n`;
+}
+
+function showVerdict(data,finding){
+  const cls={'FRAUD CONFIRMED':'fraud-confirmed','FRAUD LIKELY':'fraud-likely','INCONCLUSIVE':'inconclusive','NO FRAUD INDICATED':'no-fraud'}[data.verdict]||'inconclusive';
+  const rc={'CRITICAL':'rc','HIGH':'rh','MEDIUM':'rm','LOW':'rl'}[data.risk_rating]||'rm';
+  document.getElementById('va').innerHTML=`
+    <div class="v-strip">
+      <div class="v-row">
+        <div><div class="v-lbl">Athena's Verdict</div><div class="v-badge ${cls}">${data.verdict}</div></div>
+        <div class="v-sep"></div>
+        <div style="text-align:center"><div class="v-lbl">Confidence</div><div class="v-num">${data.confidence}%</div><div class="v-bar"><div class="v-fill" id="vf"></div></div></div>
+        <div class="v-sep"></div>
+        <div style="text-align:right"><div class="v-lbl">Risk Rating</div><div class="v-risk ${rc}">${data.risk_rating}</div></div>
+      </div>
+      <button class="new-btn" onclick="location.reload()">New Case</button>
+    </div>`;
+  setTimeout(()=>{const f=document.getElementById('vf');if(f)f.style.width=data.confidence+'%'},150);
+  if(finding)saveHist(finding,data.verdict,data.confidence,data.risk_rating);
+  debText+=`\n\nVERDICT: ${data.verdict} | ${data.confidence}% | ${data.risk_rating}\n`;
+  document.getElementById('xbtn').style.display='flex';
+}
+
+async function runDebate(data,finding){
+  debText=`DARVIN & THE PULSE\n${'─'.repeat(40)}\n`;
+  const dc=splitPts(data.darvin),wc=splitPts(data.ward),ac=splitPts(data.athena);
+  const max=Math.min(Math.max(dc.length,wc.length),16);
+  setAg('darvin','active');
+  for(let i=0;i<max;i++){
+    if(i<dc.length){setAg('darvin','active');if(i>0)setAg('ward','done');showTyping('darvin');await sleep(600);await addMsg('darvin',dc[i]);await sleep(180);}
+    if(i<wc.length){setAg('ward','active');setAg('darvin','done');showTyping('ward');await sleep(500);await addMsg('ward',wc[i]);await sleep(180);}
+  }
+  setAg('darvin','done');setAg('ward','done');await sleep(700);
+  for(const c of ac){await addAthena(c);await sleep(350);}
+  await sleep(500);showVerdict(data,finding);
+}
+
+function handleCSV(input){
+  const file=input.files[0];if(!file)return;
+  const r=new FileReader();
+  r.onload=e=>{
+    const lines=e.target.result.trim().split('\n');if(lines.length<2)return;
+    const hdrs=lines[0].split(',').map(h=>h.trim().replace(/"/g,'').toLowerCase());
+    csvRows=lines.slice(1).filter(l=>l.trim()).map(line=>{
+      const vals=line.split(',').map(v=>v.trim().replace(/"/g,''));
+      const row={};hdrs.forEach((h,i)=>row[h]=vals[i]||'');
+      return{exception_id:row.id||row.exception_id||`F-${Math.random().toString(36).slice(2,6)}`,test_name:row.test_id||row.test||row.test_name||'Unknown',description:row.reason||row.description||'',amount:parseFloat(row.amount)||null,vendor:row.vendor||'',flags:[row.severity||'medium']};
+    });
+    document.getElementById('cp').style.display='block';
+    document.getElementById('ci').innerHTML=`<b style="color:var(--a)">${csvRows.length}</b> findings from <b style="color:var(--bright)">${file.name}</b>`;
+    document.getElementById('gbc').style.display='block';
+  };r.readAsText(file);
+}
+async function conveneCSV(){if(!csvRows.length)return;document.getElementById('gbc').disabled=true;await start(csvRows,csvRows[0]);}
+async function convene(){
+  const f={exception_id:document.getElementById('fex').value||'EX-001',test_name:document.getElementById('ftest').value||'Manual Review',description:document.getElementById('fd').value||'Finding submitted for tribunal review',amount:parseFloat(document.getElementById('fa').value)||null,vendor:document.getElementById('fv').value||null,flags:getFlags()};
+  document.getElementById('gb').disabled=true;await start([f],f);
+}
+async function start(findings,primary){
+  document.getElementById('empty').style.display='none';
+  document.getElementById('debate').classList.add('on');
+  setAg('darvin','active');showTyping('darvin');
+  let data;
+  try{
+    const res=await fetch(`${API}/tribunal/analyze`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({dataset_id:'UI',findings:findings.slice(0,50)})});
+    data=await res.json();if(!res.ok)throw new Error(data.detail||'Error');
+  }catch(e){
+    removeTyping('darvin');await addMsg('darvin',`Cannot reach tribunal: ${e.message}`);
+    setAg('darvin','');document.getElementById('gb').disabled=false;document.getElementById('gbc').disabled=false;return;
+  }
+  removeTyping('darvin');await runDebate(data,primary);
+}
+function fromURL(){
+  try{
+    const raw=new URLSearchParams(window.location.search).get('data');if(!raw)return;
+    const d=JSON.parse(decodeURIComponent(raw));
+    if(d.exception_id)document.getElementById('fex').value=d.exception_id;
+    if(d.test_name)document.getElementById('ftest').value=d.test_name;
+    if(d.description)document.getElementById('fd').value=d.description;
+    if(d.vendor)document.getElementById('fv').value=d.vendor;
+    if(d.amount)document.getElementById('fa').value=d.amount;
+    if(d.flags)document.querySelectorAll('.flag').forEach(el=>{if(d.flags.includes(el.textContent.trim()))el.classList.add('on');});
+  }catch(e){}
+}
+window.addEventListener('DOMContentLoaded',()=>{
+  try{loadCfg();}catch(e){}
+  try{loadHist();}catch(e){}
+  fromURL();
+});
+</script>
 </body>
 </html>
