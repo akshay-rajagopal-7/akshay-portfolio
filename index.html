@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshay Rajagopal — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#10b981;--gold:#f59e0b;--ink:#1a201d;--body:#454e49;--mute:#8a948e;
+    --line:#e7eae8;--bg:#fbfcfb;--card:#ffffff;
+    --serif:'Newsreader',Georgia,serif;--sans:'IBM Plex Sans',-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:840px;margin:0 auto;padding:0 28px}
+  header{padding:80px 0 18px}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:16px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,6vw,52px);line-height:1.05;letter-spacing:-.02em;color:var(--ink);margin-bottom:18px}
+  header .bio{max-width:600px;color:var(--body);font-size:16px}
+  .meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px;color:var(--mute)}
+  .meta b{color:var(--ink);font-weight:500}
+  .rule{height:1px;background:var(--line);margin:48px 0}
+  section{margin-bottom:8px}
+  .sec-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:22px}
+  .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px;margin-bottom:18px;transition:border-color .25s,box-shadow .25s}
+  .item:hover{border-color:#d3d9d6;box-shadow:0 6px 22px rgba(26,32,29,.05)}
+  .item-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .item h3{font-family:var(--serif);font-size:23px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+  .tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 10px;border-radius:20px;white-space:nowrap}
+  .tag.live{color:var(--green);background:rgba(16,185,129,.1)}
+  .tag.beta{color:var(--gold);background:rgba(245,158,11,.12)}
+  .tag.doc{color:var(--mute);background:#f1f3f2}
+  .item .role{font-size:13px;color:var(--mute);margin-top:3px}
+  .item p{margin:16px 0 18px;color:var(--body);font-size:14.5px;max-width:640px}
+  .stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+  .chip{font-size:12px;color:var(--body);background:#f4f6f5;border:1px solid var(--line);border-radius:5px;padding:3px 9px}
+  .agents{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px;font-size:13px;color:var(--mute)}
+  .agents b{color:var(--ink);font-weight:500}
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  .lnk{font-size:13px;font-weight:500;text-decoration:none;padding:9px 16px;border-radius:7px;border:1px solid var(--line);color:var(--ink);transition:all .2s;display:inline-flex;align-items:center;gap:7px}
+  .lnk.solid{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .lnk.solid:hover{background:#000}
+  .lnk:hover{border-color:#c8cfcb;background:#f7f9f8}
+  .lnk.off{color:var(--mute);cursor:default;background:#f7f8f7}
+  .lnk.off:hover{border-color:var(--line);background:#f7f8f7}
+  footer{padding:44px 0 70px;border-top:1px solid var(--line);margin-top:40px}
+  footer .flinks{display:flex;flex-wrap:wrap;gap:20px;font-size:13px}
+  footer a{color:var(--mute);text-decoration:none;transition:color .2s}
+  footer a:hover{color:var(--ink)}
+  footer .fine{margin-top:18px;font-size:12px;color:var(--mute)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Forensic &amp; Audit Analytics</div>
+    <h1>Akshay Rajagopal</h1>
+    <p class="bio">I build AI-assisted forensic audit platforms and the financial tooling around them — from exception detection and evidence pipelines to working spreadsheets and process design. A selection of live systems and documents is below.</p>
+    <div class="meta">
+      <div>Role &middot; <b>Builder, Forensic Analytics</b></div>
+      <div>Stack &middot; <b>React &middot; FastAPI &middot; DuckDB &middot; Groq AI</b></div>
+      <div>Based &middot; <b>United Arab Emirates</b></div>
+    </div>
+  </header>
+
+  <div class="rule"></div>
+
+  <section>
+    <div class="sec-label">Platforms</div>
+
+    <div class="item">
+      <div class="item-top">
+        <div><h3>AureviaForge Engine</h3><div class="role">Forensic audit analytics platform</div></div>
+        <span class="tag live">&#9679; Live</span>
+      </div>
+      <p>A full forensic audit pipeline in the browser. Auditors upload raw transactional data and the engine automatically surfaces exceptions and anomalies, ranks them, and lets investigators attach persistent case notes to every finding &mdash; building a complete, exportable evidence trail. An integrated AI reasoning layer explains <em>why</em> each item was flagged in plain language, turning a wall of numbers into a defensible narrative. Built to handle large result sets with paginated findings (200 at a time) and one-click CSV export of findings and notes for working papers.</p>
+      <div class="stack">
+        <span class="chip">React + Vite</span><span class="chip">FastAPI</span><span class="chip">SQLite</span><span class="chip">DuckDB</span><span class="chip">Groq &middot; llama-3.3-70b</span>
+      </div>
+      <div class="links">
+        <a class="lnk solid" href="https://aureviaforge-engine-production.up.railway.app" target="_blank" rel="noopener">Open live app &rarr;</a>
+        <a class="lnk" href="https://github.com/akshay-rajagopal-7/aureviaforge-engine" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-top">
+        <div><h3>Darvin &amp; the Pulse</h3><div class="role">Three-agent AI review tribunal</div></div>
+        <span class="tag beta">Beta</span>
+      </div>
+      <p>An adversarial AI tribunal that puts every forensic finding on trial before it ever reaches a report. Three distinct AI agents argue the case: Darvin prosecutes as a fraud examiner, Ward defends, and Athena weighs both sides and rules as chief arbiter. The result is a finding that has survived genuine scrutiny rather than a single model's first guess &mdash; a built-in second opinion that reduces false positives and strengthens the audit conclusion. Convened directly from any flagged exception in AureviaForge, with a courtroom-style interface, animated agents, and per-agent voice narration.</p>
+      <div class="agents">
+        <span><b>Darvin</b> &mdash; Fraud Examiner</span><span><b>Ward</b> &mdash; Defense Counsel</span><span><b>Athena</b> &mdash; Chief Arbiter</span>
+      </div>
+      <div class="links">
+        <!-- TODO: replace with live + source links once deployed -->
+        <a class="lnk off">Demo &mdash; coming soon</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section>
+    <div class="sec-label">Documents &amp; Models</div>
+
+    <div class="item">
+      <div class="item-top">
+        <div><h3>Petty Cash Workbook</h3><div class="role">Advanced Excel model &middot; AED</div></div>
+        <span class="tag doc">Spreadsheet</span>
+      </div>
+      <p>A production-grade petty-cash control workbook built for real project finance in AED. It tracks every transaction, reconciles staff advances against actual spend, flags variances automatically, and rolls up to live closing balances &mdash; all formula-driven, so the books stay accurate without manual recalculation. A dedicated guide sheet makes it hand-off ready for any team member. This is the spreadsheet discipline that informs the forensic engine: the same controls, made auditable.</p>
+      <div class="stack">
+        <span class="chip">Transactions</span><span class="chip">Advances Summary</span><span class="chip">Guide</span><span class="chip">Formula-driven</span>
+      </div>
+      <div class="links">
+        <a class="lnk solid" href="assets/Petty_Cash_Workbook.xlsx" download>Download .xlsx &darr;</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-top">
+        <div><h3>Business Process Workflow</h3><div class="role">End-to-end process model &middot; 17 slides</div></div>
+        <span class="tag doc">Deck</span>
+      </div>
+      <p>A complete operating blueprint for an app-based service business, mapped across 17 slides. It traces the full customer lifecycle &mdash; onboarding, subscription, and training delivery &mdash; and layers in the operational backbone: Six Sigma quality control, data-security handling, and the decision flow all the way up to the board. A clear demonstration of systems thinking: not just how a feature works, but how an entire business process fits together and where the controls live.</p>
+      <div class="stack">
+        <span class="chip">Process modeling</span><span class="chip">Onboarding &rarr; Retention</span><span class="chip">Six Sigma</span>
+      </div>
+      <div class="links">
+        <a class="lnk solid" href="assets/Business_Process_Workflow.pptx" download>Download .pptx &darr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="flinks">
+      <a href="https://github.com/akshay-rajagopal-7" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://aureviaforge-engine-production.up.railway.app" target="_blank" rel="noopener">Live app</a>
+      <!-- TODO: add LinkedIn + email -->
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="fine">&copy; 2026 Akshay Rajagopal</div>
+  </footer>
+
+</div>
+</body>
+</html>
