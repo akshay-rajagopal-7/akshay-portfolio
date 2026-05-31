@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshay Rajagopal — Forensic & Audit Analytics</title>
+<title>Akshay Rajagopal — Finance, Accounts & Compliance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -70,6 +70,9 @@
   .tag.doc{color:#6a746e;background:#eef1ef}
   .item p{margin:18px 0 22px;color:var(--body);font-size:14.5px;flex:1}
   .stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+  .tests{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
+  .tt{font-size:11px;color:var(--green-d);background:rgba(16,185,129,.09);border:1px solid rgba(16,185,129,.22);border-radius:6px;padding:4px 9px;letter-spacing:.01em}
+  .note{font-size:12px!important;color:var(--mute)!important;font-style:italic;margin:0 0 22px!important;flex:0!important}
   .chip{font-size:11.5px;color:var(--body);background:#f1f4f2;border:1px solid var(--line);border-radius:6px;padding:4px 10px}
   .agents{display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
   .agents .ag{font-size:13px;color:var(--mute);display:flex;gap:9px;align-items:baseline}
@@ -103,12 +106,10 @@
   <!-- HERO -->
   <header class="hero">
     <div class="wrap hero-in">
-      <div class="eyebrow">Forensic &amp; Audit Analytics</div>
+      <div class="eyebrow">Finance · Accounts · Compliance</div>
       <h1>Akshay Rajagopal</h1>
-      <p class="bio">I build AI-assisted forensic audit platforms and the financial tooling around them — from exception detection and evidence pipelines to working spreadsheets and process design. A selection of live systems and documents is below.</p>
+      <p class="bio">Finance, accounts and compliance professional with a focus on internal controls and governance. I pair that discipline with hands-on tools — forensic audit platforms, control workbooks, and process models — that turn financial data into clear, defensible decisions. A selection of work is below.</p>
       <div class="meta">
-        <div><span class="lbl">Role</span><b>Builder, Forensic Analytics</b></div>
-        <div><span class="lbl">Stack</span><b>React · FastAPI · DuckDB · Groq AI</b></div>
         <div><span class="lbl">Based</span><b>United Arab Emirates</b></div>
       </div>
     </div>
@@ -125,13 +126,16 @@
             <div><h3>AureviaForge Engine</h3><div class="role">Forensic audit analytics platform</div><div class="by">by Akshay Rajagopal</div></div>
             <span class="tag live">● Live</span>
           </div>
-          <p>A full forensic audit pipeline in the browser. Auditors upload raw transactional data and the engine automatically surfaces exceptions and anomalies, ranks them, and lets investigators attach persistent case notes to every finding — building a complete, exportable evidence trail. An integrated AI reasoning layer explains <em>why</em> each item was flagged in plain language, turning a wall of numbers into a defensible narrative.</p>
-          <div class="stack">
-            <span class="chip">React + Vite</span><span class="chip">FastAPI</span><span class="chip">SQLite</span><span class="chip">DuckDB</span><span class="chip">Groq · llama-3.3-70b</span>
+          <p>A forensic analytics engine that processes up to <b>100 million financial transactions in under a minute</b> on a local machine — a large enterprise's multi-year history, surfaced for red flags that actually matter. It runs ten investigative tests, ranks every exception, and lets you attach case notes and export findings to CSV for deeper work. An integrated AI layer goes further: you can <em>interrogate</em> the data in plain language and get structured investigative insights and executive-level summaries instantly.</p>
+          <div class="tests">
+            <span class="tt">Benford's Law — 1st &amp; 2nd digit</span><span class="tt">Duplicate detection</span><span class="tt">Threshold avoidance</span><span class="tt">Round-number analysis</span><span class="tt">Gap &amp; sequence</span><span class="tt">Same-day payment anomalies</span><span class="tt">Vendor concentration</span><span class="tt">Statistical outliers</span><span class="tt">Weekend &amp; after-hours</span>
           </div>
+          <div class="stack">
+            <span class="chip">React + Vite</span><span class="chip">FastAPI</span><span class="chip">SQLite</span><span class="chip">DuckDB</span><span class="chip">AI interrogation · Groq</span>
+          </div>
+          <p class="note">Runs locally on a Mac. The live link is a trial deployment with limited upload capacity.</p>
           <div class="links">
             <a class="lnk solid" href="https://aureviaforge-engine-production.up.railway.app" target="_blank" rel="noopener">Open live app →</a>
-            <a class="lnk" href="https://github.com/akshay-rajagopal-7/aureviaforge-engine" target="_blank" rel="noopener">Source</a>
           </div>
         </div>
 
@@ -140,11 +144,11 @@
             <div><h3>Darvin &amp; the Pulse</h3><div class="role">Three-agent AI review tribunal</div><div class="by">by Akshay Rajagopal</div></div>
             <span class="tag beta">Beta</span>
           </div>
-          <p>An adversarial AI tribunal that puts every forensic finding on trial before it reaches a report. Three distinct agents argue the case — a finding that has survived genuine scrutiny rather than a single model's first guess. A built-in second opinion that reduces false positives and strengthens the audit conclusion.</p>
+          <p>Most tools read your data. This one <em>cross-examines</em> it. Darvin &amp; the Pulse puts every forensic finding on trial before it reaches a report: a three-agent AI tribunal where the evidence is prosecuted, defended, and judged. What survives isn't one model's first guess — it's a conclusion that has withstood argument from both sides. Fewer false positives, stronger findings, and a verdict you can actually defend.</p>
           <div class="agents">
-            <div class="ag"><b>Darvin</b> Fraud Examiner · Prosecution</div>
-            <div class="ag"><b>Ward</b> Defense Counsel</div>
-            <div class="ag"><b>Athena</b> Chief Arbiter</div>
+            <div class="ag"><b>Darvin</b> Fraud Examiner — builds the case against the transaction</div>
+            <div class="ag"><b>Ward</b> Defense Counsel — argues the innocent explanation</div>
+            <div class="ag"><b>Athena</b> Chief Arbiter — weighs both and delivers the verdict</div>
           </div>
           <div class="links">
             <a class="lnk off">Demo — coming soon</a>
@@ -193,9 +197,8 @@
     <div class="wrap foot-in">
       <div class="name">Akshay Rajagopal</div>
       <div class="flinks">
-        <a href="https://github.com/akshay-rajagopal-7" target="_blank" rel="noopener">GitHub</a>
         <a href="https://aureviaforge-engine-production.up.railway.app" target="_blank" rel="noopener">Live app</a>
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/a-rajagopal/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </footer>
