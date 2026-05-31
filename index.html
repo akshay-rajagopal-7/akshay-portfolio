@@ -22,15 +22,21 @@
 
   /* ===== HERO BAND (dark, full-bleed) ===== */
   .hero{
-    background:
-      radial-gradient(1200px 500px at 80% -10%, rgba(16,185,129,.22), transparent 60%),
-      radial-gradient(900px 500px at 5% 120%, rgba(245,158,11,.12), transparent 55%),
-      var(--dark);
+    background:var(--dark);
     color:#eaf2ee;position:relative;overflow:hidden;
     border-bottom:1px solid rgba(255,255,255,.06);
   }
+  .hero .glow{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+  .hero .glow span{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;will-change:transform}
+  .hero .glow .g1{width:620px;height:620px;background:rgba(16,185,129,.30);top:-220px;right:-120px;animation:drift1 18s ease-in-out infinite alternate}
+  .hero .glow .g2{width:520px;height:520px;background:rgba(245,158,11,.16);bottom:-240px;left:-100px;animation:drift2 22s ease-in-out infinite alternate}
+  .hero .glow .g3{width:360px;height:360px;background:rgba(16,185,129,.16);top:30%;left:42%;animation:drift3 26s ease-in-out infinite alternate}
+  @keyframes drift1{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-90px,70px) scale(1.12)}}
+  @keyframes drift2{0%{transform:translate(0,0) scale(1)}100%{transform:translate(80px,-60px) scale(1.08)}}
+  @keyframes drift3{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-60px,-50px) scale(1.15)}}
+  @media(prefers-reduced-motion:reduce){.hero .glow span{animation:none}}
   .hero::after{
-    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;z-index:0;
     background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
     background-size:44px 44px;mask-image:radial-gradient(circle at 70% 20%,#000,transparent 75%);
   }
@@ -105,6 +111,7 @@
 
   <!-- HERO -->
   <header class="hero">
+    <div class="glow"><span class="g1"></span><span class="g2"></span><span class="g3"></span></div>
     <div class="wrap hero-in">
       <div class="eyebrow">Finance · Accounts · Compliance</div>
       <h1>Akshay Rajagopal</h1>
