@@ -4,315 +4,348 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Akshay Rajagopal — Forensic Finance & Compliance</title>
+<meta name="description" content="Akshay Rajagopal — finance, accounts and compliance professional in Dubai, UAE. Internal controls, governance, and forensic audit tools that turn financial data into clear, defensible decisions.">
+<meta name="author" content="Akshay Rajagopal">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Akshay Rajagopal — Forensic Finance & Compliance">
+<meta property="og:description" content="Finance, accounts & compliance professional. Internal controls, governance, and forensic audit tools built to make financial data defensible.">
+<meta property="og:url" content="https://akshay-rajagopal-7.github.io/akshay-portfolio/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Akshay Rajagopal — Forensic Finance & Compliance">
+<meta name="twitter:description" content="Finance, accounts & compliance professional. Forensic audit tools built to make financial data defensible.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23050706'/%3E%3Ccircle cx='16' cy='16' r='8.5' fill='none' stroke='%2310b981' stroke-width='2.4'/%3E%3Crect x='14.8' y='9' width='2.4' height='8' rx='1.2' fill='%2310b981'/%3E%3Ccircle cx='16' cy='21.5' r='1.7' fill='%23f59e0b'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --green:#10b981;--green-l:#34d8a4;--green-d:#0c8f63;--gold:#f59e0b;--gold-l:#fbbf24;
-    --bg:#060c09;--bg2:#0a120d;--panel:#0d1812;--panel2:#10201a;
-    --ink:#eaf3ee;--body:#9fb1a8;--mute:#5f7269;--line:#1a2b22;
-    --disp:'Fraunces',Georgia,serif;--mono:'JetBrains Mono',monospace;--sans:'IBM Plex Sans',sans-serif;
-    --maxw:1180px;
+    --green:#10b981;--green-l:#3dffb0;--gold:#f59e0b;
+    --bg:#050706;--bg2:#080b09;--panel:#0a0e0c;
+    --ink:#f3f7f4;--body:#8d9c94;--mute:#4e5d55;--line:#171f1b;--line2:#22302a;
+    --sans:'Archivo',sans-serif;--mono:'JetBrains Mono',monospace;--serif:'Fraunces',serif;
+    --maxw:1640px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,52px);width:100%;position:relative;z-index:2}
-  a{color:inherit}
+  body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;cursor:default;-webkit-user-select:none;user-select:none}
+  a[href],button,[role="button"]{cursor:pointer}
+  a[href^="mailto"]{-webkit-user-select:text;user-select:text}
+  .lnk.off{cursor:default}
+  #constel,#cnet{cursor:default}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,64px);width:100%;position:relative;z-index:2}
+  a{color:inherit;text-decoration:none}
 
-  /* ===== GLOBAL ANIMATED BACKDROP ===== */
+  /* backdrop: faint hairline grid + slow drift + grain */
   .bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-  .bg .mesh{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
-  .bg .m1{width:60vw;height:60vw;background:radial-gradient(circle,rgba(16,185,129,.22),transparent 70%);top:-20vw;right:-15vw;animation:float1 26s ease-in-out infinite alternate}
-  .bg .m2{width:50vw;height:50vw;background:radial-gradient(circle,rgba(245,158,11,.12),transparent 70%);bottom:-18vw;left:-12vw;animation:float2 32s ease-in-out infinite alternate}
-  .bg .m3{width:38vw;height:38vw;background:radial-gradient(circle,rgba(16,185,129,.13),transparent 70%);top:38%;left:34%;animation:float3 38s ease-in-out infinite alternate}
-  @keyframes float1{to{transform:translate(-7vw,6vw) scale(1.15)}}
-  @keyframes float2{to{transform:translate(6vw,-5vw) scale(1.12)}}
-  @keyframes float3{to{transform:translate(-5vw,-4vw) scale(1.2)}}
-  .bg .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:58px 58px;opacity:.35;mask-image:radial-gradient(circle at 70% 12%,#000,transparent 78%);animation:gridpan 40s linear infinite}
-  @keyframes gridpan{to{background-position:58px 58px}}
-  .bg .scan{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(16,185,129,.45),transparent);animation:scan 8s linear infinite}
-  @keyframes scan{0%{top:-2%}100%{top:102%}}
-  /* floating particles */
-  .bg .p{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--green);opacity:.0;box-shadow:0 0 8px var(--green)}
-  .bg .p:nth-child(5){left:12%;animation:rise 14s linear infinite}
-  .bg .p:nth-child(6){left:28%;animation:rise 19s linear infinite 2s}
-  .bg .p:nth-child(7){left:46%;background:var(--gold);box-shadow:0 0 8px var(--gold);animation:rise 16s linear infinite 1s}
-  .bg .p:nth-child(8){left:64%;animation:rise 22s linear infinite 3s}
-  .bg .p:nth-child(9){left:81%;animation:rise 17s linear infinite 4s}
-  .bg .p:nth-child(10){left:92%;background:var(--gold);box-shadow:0 0 8px var(--gold);animation:rise 20s linear infinite 2s}
-  @keyframes rise{0%{top:105%;opacity:0}10%{opacity:.7}90%{opacity:.7}100%{top:-5%;opacity:0}}
+  .bg .grid{position:absolute;inset:-2px;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:clamp(40px,5vw,72px) clamp(40px,5vw,72px);opacity:.5;mask-image:radial-gradient(circle at 50% 0,#000,transparent 80%)}
+  .bg .v{position:absolute;width:50vw;height:50vw;border-radius:50%;filter:blur(120px);opacity:.4}
+  .bg .v1{background:radial-gradient(circle,rgba(16,185,129,.18),transparent 70%);top:-15vw;left:-10vw;animation:drift 30s ease-in-out infinite alternate}
+  .bg .v2{background:radial-gradient(circle,rgba(245,158,11,.07),transparent 70%);bottom:-15vw;right:-8vw;animation:drift2 36s ease-in-out infinite alternate}
+  @keyframes drift{to{transform:translate(6vw,5vw)}}
+  @keyframes drift2{to{transform:translate(-5vw,-4vw)}}
+  body::after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
   @media(prefers-reduced-motion:reduce){.bg *{animation:none!important}}
 
-  /* ===== SCROLL REVEAL ===== */
-  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  /* reveal */
+  .rv{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.16,.8,.2,1),transform .8s cubic-bezier(.16,.8,.2,1)}
   .rv.in{opacity:1;transform:none}
 
-  /* ===== NAV ===== */
-  .nav{position:sticky;top:0;z-index:50;background:rgba(6,12,9,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:62px}
-  .brand{display:flex;align-items:center;gap:11px;font-family:var(--disp);font-size:18px;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
-  .brand .mk{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--green),var(--gold));position:relative;overflow:hidden;flex-shrink:0;animation:spinmk 14s linear infinite}
-  @keyframes spinmk{to{filter:hue-rotate(40deg)}}
-  .brand .mk::after{content:"";position:absolute;inset:5px;border:1.5px solid rgba(6,12,9,.6);border-radius:50%}
-  .brand .mk::before{content:"";position:absolute;left:50%;top:50%;width:2px;height:9px;background:rgba(6,12,9,.7);transform:translate(-50%,-50%)}
-  .nav-links{display:flex;gap:28px;font-size:13px;font-weight:500;font-family:var(--mono)}
-  .nav-links a{color:var(--mute);text-decoration:none;transition:color .2s;position:relative}
-  .nav-links a:hover{color:var(--ink)}
-  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--green);transition:width .25s}
-  .nav-links a:hover::after{width:100%}
-  @media(max-width:640px){.nav-links{gap:18px;font-size:12px}}
+  /* ===== NAV — hairline ===== */
+  @keyframes bl{50%{opacity:.35}}
 
-  /* ===== HERO ===== */
-  .hero{position:relative;border-bottom:1px solid var(--line)}
-  .hero-in{padding:clamp(76px,13vw,140px) 0 clamp(64px,10vw,110px)}
-  .kicker{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);border:1px solid var(--line);background:rgba(16,185,129,.05);padding:7px 13px;border-radius:30px;margin-bottom:26px;opacity:0;animation:fadeUp .8s .1s forwards}
-  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:bl 2s infinite}
-  @keyframes bl{50%{opacity:.3}}
-  .hero h1{font-family:var(--disp);font-weight:900;font-size:clamp(42px,9vw,90px);line-height:.94;letter-spacing:-.03em;color:#fff;margin-bottom:24px}
-  .hero h1 span{display:block;opacity:0;animation:fadeUp .9s forwards}
-  .hero h1 .l1{animation-delay:.2s}
-  .hero h1 .l2{animation-delay:.34s}
-  .hero h1 .l3{animation-delay:.48s;font-style:italic;font-weight:500;background:linear-gradient(100deg,var(--green-l),var(--gold-l),var(--green-l));background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:fadeUp .9s .48s forwards,shimmer 6s linear infinite}
-  @keyframes shimmer{to{background-position:200% center}}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-  .hero .bio{max-width:600px;color:var(--body);font-size:clamp(15px,3.4vw,18px);line-height:1.6;opacity:0;animation:fadeUp .9s .62s forwards}
-  .hero-actions{margin-top:36px;display:flex;flex-wrap:wrap;gap:13px;opacity:0;animation:fadeUp .9s .76s forwards}
-  .hbtn{font-family:var(--mono);font-size:13px;font-weight:700;text-decoration:none;padding:14px 24px;border-radius:9px;transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:9px;position:relative;overflow:hidden}
-  .hbtn.p{background:var(--green);color:#04120c}
-  .hbtn.p::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:sweep 4s ease-in-out infinite}
-  @keyframes sweep{0%,60%{left:-60%}100%{left:130%}}
-  .hbtn.p:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(16,185,129,.32)}
-  .hbtn.s{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.02)}
-  .hbtn.s:hover{border-color:var(--green);color:#fff}
-  /* marquee strip under hero */
-  .mq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.015);overflow:hidden;white-space:nowrap}
-  .mq-t{display:inline-block;padding:14px 0;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);animation:marq 28s linear infinite}
-  .mq-t span{color:var(--green);margin:0 6px}
-  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  /* ===== HERO — brutalist ===== */
+  .hero{position:relative}
+  .hero-in{padding:clamp(40px,6vw,80px) 0 clamp(44px,7vw,84px);display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(30px,4vw,60px);align-items:center}
+  @media(max-width:920px){.hero-in{grid-template-columns:1fr}}
+  .hero-copy{min-width:0}
+  .constel{position:relative;border:0;background:transparent;height:clamp(300px,34vw,440px);overflow:hidden}
+  @media(max-width:920px){.constel{display:none}}
+  .constel canvas{display:block;width:100%;height:100%}
+  .hero h1{font-family:var(--sans);font-weight:900;font-size:clamp(46px,8.6vw,140px);line-height:.84;letter-spacing:-.04em;color:var(--ink);text-transform:uppercase}
+  .hero h1 .a{display:block;overflow:hidden;padding:0 .06em 0 0}
+  .hero h1 .a span{display:inline-block;transform:translateY(110%);animation:rise .9s cubic-bezier(.16,.9,.2,1) forwards}
+  .hero h1 .a:nth-child(2) span{animation-delay:.12s;color:transparent;-webkit-text-stroke:1.5px var(--green);text-stroke:1.5px var(--green)}
+  @keyframes rise{to{transform:none}}
+  .hero .lead{margin-top:clamp(28px,4vw,44px);max-width:620px;font-size:clamp(15px,2.4vw,18px);color:var(--body);line-height:1.5;opacity:0;animation:fadeUp .8s .5s forwards;border-left:2px solid var(--green);padding-left:20px}
+  .hero .loc{margin-top:16px;padding-left:22px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);opacity:0;animation:fadeUp .8s .58s forwards}
+  .hero .loc::before{content:"◆ ";color:var(--green)}
+  .hero-cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:14px;opacity:0;animation:fadeUp .8s .65s forwards}
+  .hbtn{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 26px;display:inline-flex;align-items:center;gap:9px;border:1px solid var(--green);color:var(--green-l);background:transparent;transition:all .22s;position:relative;overflow:hidden}
+  .hbtn span{position:relative;z-index:1}
+  .hbtn::before{content:"";position:absolute;inset:0;background:var(--green);transform:translateY(101%);transition:transform .28s cubic-bezier(.16,.9,.2,1)}
+  .hbtn:hover{color:#04120c}
+  .hbtn:hover::before{transform:translateY(0)}
+  @keyframes fadeUp{to{opacity:1;transform:none}}
+  .hero .lead,.hero .loc,.hero-cta{transform:translateY(18px)}
 
-  /* ===== SECTION HEAD ===== */
-  main{padding:clamp(56px,9vw,90px) 0 30px}
-  .shead{display:flex;align-items:baseline;gap:16px;margin:0 0 32px;scroll-margin-top:84px}
-  .shead .ix{font-family:var(--mono);font-size:13px;color:var(--green)}
-  .shead h2{font-family:var(--disp);font-size:clamp(24px,5vw,36px);font-weight:600;color:var(--ink);letter-spacing:-.01em}
-  .shead .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
-  .shead:not(:first-of-type){margin-top:clamp(46px,8vw,76px)}
 
-  /* ===== CARDS ===== */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,3vw,22px)}
-  @media(max-width:840px){.grid{grid-template-columns:1fr}}
-  .card{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:18px;padding:clamp(26px,4vw,38px);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .35s}
-  /* animated border glow on hover */
-  .card::after{content:"";position:absolute;inset:-1px;border-radius:18px;padding:1px;background:linear-gradient(130deg,var(--green),transparent 40%,transparent 60%,var(--gold));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s}
-  .card:hover{transform:translateY(-6px);box-shadow:0 28px 64px rgba(0,0,0,.55)}
-  .card:hover::after{opacity:.7}
-  .card .topbar{height:3px;background:linear-gradient(90deg,var(--green),var(--gold));border-radius:3px;width:54px;margin-bottom:24px;position:relative;overflow:hidden}
-  .card .topbar::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);transform:translateX(-100%);animation:tbsweep 3.5s ease-in-out infinite}
-  @keyframes tbsweep{0%,55%{transform:translateX(-100%)}100%{transform:translateX(200%)}}
-  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
-  .card h3{font-family:var(--disp);font-size:clamp(22px,4.6vw,28px);font-weight:600;color:#fff;letter-spacing:-.01em;line-height:1.08}
-  .card .role{font-family:var(--mono);font-size:12px;color:var(--mute);margin-top:7px}
-  .card .by{font-size:12.5px;color:var(--mute);font-style:italic;margin-top:3px;font-family:var(--disp)}
-  .tag{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:6px 11px;border-radius:30px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
-  .tag.live{color:var(--green-l);background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3)}
-  .tag.live .d{width:6px;height:6px;border-radius:50%;background:var(--green-l);box-shadow:0 0 8px var(--green-l);animation:bl 1.8s infinite}
-  .tag.beta{color:var(--gold-l);background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.32)}
-  .tag.doc{color:var(--body);background:rgba(255,255,255,.04);border:1px solid var(--line)}
-  .card p{margin:20px 0;color:var(--body);font-size:clamp(14px,3.3vw,15px);line-height:1.62;flex:1}
-  .card p b{color:#fff;font-weight:600}
-  .card p em{color:var(--green-l);font-style:italic}
-  .note{font-family:var(--mono)!important;font-size:11.5px!important;color:var(--mute)!important;margin:0 0 22px!important;flex:0!important;padding-left:14px;border-left:2px solid var(--line)}
+  /* ===== SECTION ===== */
+  main{padding:clamp(40px,6vw,72px) 0 0}
+  .shead{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:22px;margin:0 0 clamp(28px,4vw,40px);scroll-margin-top:80px}
+  .shead h2{font-family:var(--sans);font-weight:800;font-size:clamp(22px,3.4vw,30px);color:var(--ink);text-transform:uppercase;letter-spacing:-.02em}
+  .shead .rule{height:1px;background:var(--line2)}
+  .shead .ct{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.08em}
+  .shead:not(:first-of-type){margin-top:clamp(44px,7vw,72px)}
 
-  .tests{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 20px}
-  .tt{font-family:var(--mono);font-size:11px;color:var(--green-l);background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.2);border-radius:6px;padding:5px 10px;display:inline-flex;align-items:center;gap:6px;transition:background .25s,border-color .25s,transform .25s}
-  .tt::before{content:"";width:5px;height:5px;background:var(--green);border-radius:1px;transform:rotate(45deg);flex-shrink:0;transition:box-shadow .25s}
-  .tt:hover{background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.45);transform:translateY(-2px)}
-  .tt:hover::before{box-shadow:0 0 8px var(--green)}
-  .stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
-  .chip{font-family:var(--mono);font-size:11px;color:var(--body);background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:6px;padding:5px 10px}
+  /* ===== CARDS — sharp, hairline ===== */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,20px);align-items:stretch}
+  @media(max-width:860px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;position:relative;transition:border-color .3s,background .3s}
+  .card::before{content:attr(data-no);position:absolute;top:18px;right:22px;font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.1em}
+  .card:hover{border-color:var(--line2);background:#0c110e}
+  /* corner ticks */
+  .card .corner{position:absolute;width:9px;height:9px;border:1px solid var(--green);opacity:0;transition:opacity .3s}
+  .card .corner.tl{top:-1px;left:-1px;border-right:0;border-bottom:0}
+  .card .corner.br{bottom:-1px;right:-1px;border-left:0;border-top:0}
+  .card:hover .corner{opacity:1}
+  .card h3{font-family:var(--serif);font-size:clamp(22px,3vw,30px);font-weight:600;color:var(--ink);letter-spacing:-.01em;line-height:1.05;margin-bottom:6px;padding-right:60px}
+  .card .role{font-family:var(--mono);font-size:11px;color:var(--green);letter-spacing:.06em;text-transform:uppercase}
+  .card .by{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--mute);margin-top:4px}
+  .card .tag{position:absolute;top:42px;right:22px;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:4px 9px;border:1px solid currentColor}
+  .card .tag.live{color:var(--green-l)}
+  .card .tag.beta{color:var(--gold)}
+  .card .tag.doc{color:var(--mute)}
+  .card p{margin:22px 0;font-size:14px;line-height:1.62;color:var(--body)}
+  .card p b{color:var(--ink);font-weight:600}
+  .card p em{color:var(--green-l);font-style:normal;border-bottom:1px solid rgba(16,185,129,.4)}
 
-  /* agent nodes */
-  .agents{display:flex;flex-direction:column;margin-bottom:24px;border-top:1px solid var(--line)}
-  .ag{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);transition:padding-left .25s}
-  .ag:hover{padding-left:8px}
-  .ag .av{width:34px;height:34px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:15px;position:relative}
-  .ag .av::after{content:"";position:absolute;inset:-3px;border-radius:11px;border:1px solid currentColor;opacity:0;animation:ring 3s ease-out infinite}
-  .ag:nth-child(2) .av::after{animation-delay:.6s}
-  .ag:nth-child(3) .av::after{animation-delay:1.2s}
-  @keyframes ring{0%{opacity:.5;transform:scale(.9)}100%{opacity:0;transform:scale(1.4)}}
-  .ag .av.d{background:rgba(16,185,129,.12);color:var(--green-l);border:1px solid rgba(16,185,129,.3)}
-  .ag .av.p{background:rgba(245,158,11,.14);color:var(--gold-l);border:1px solid rgba(245,158,11,.3)}
-  .ag .av.a{background:rgba(255,255,255,.06);color:#fff;border:1px solid var(--line)}
-  .ag .tx b{display:block;color:#fff;font-family:var(--disp);font-size:15px;font-weight:600}
-  .ag .tx span{font-family:var(--mono);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.05em}
+  /* test list — numbered ledger rows */
+  .ledger{margin:0 0 24px;border-top:1px solid var(--line)}
+  .ledger .lr{display:grid;grid-template-columns:30px 1fr auto;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;transition:padding-left .25s,color .25s}
+  .ledger .lr:hover{padding-left:8px;color:var(--ink)}
+  .ledger .lr .n{color:var(--mute)}
+  .ledger .lr .nm{color:var(--body)}
+  .ledger .lr:hover .nm{color:var(--green-l)}
+  .ledger .lr .st{color:var(--green);font-size:13px}
 
-  .links{display:flex;flex-wrap:wrap;gap:11px;margin-top:auto}
-  .lnk{font-family:var(--mono);font-size:12.5px;font-weight:500;text-decoration:none;padding:11px 18px;border-radius:8px;border:1px solid var(--line);color:var(--ink);transition:all .2s;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.02)}
-  .lnk.solid{background:var(--green);color:#04120c;border-color:var(--green);font-weight:700}
-  .lnk.solid:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(16,185,129,.3)}
-  .lnk:hover{border-color:#2c4a3b;color:#fff}
-  .lnk.off{color:var(--mute);cursor:default}
-  .lnk.off:hover{transform:none;border-color:var(--line);color:var(--mute)}
+  .stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+  .chip{font-family:var(--mono);font-size:11px;color:var(--body);border:1px solid var(--line2);padding:5px 11px;transition:border-color .2s,color .2s}
+  .chip:hover{border-color:var(--green);color:var(--green-l)}
+  .note{font-family:var(--mono)!important;font-size:11px!important;color:var(--mute)!important;margin:0 0 22px!important;flex:0!important;padding-left:12px;border-left:1px solid var(--line2)}
+
+  /* agents — roster */
+  .roster{margin-bottom:24px;border-top:1px solid var(--line)}
+  .rr{display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);transition:padding-left .25s}
+  .rr:hover{padding-left:8px}
+  .rr .av{width:40px;height:40px;border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:17px;position:relative}
+  .rr .av svg{width:30px;height:30px;display:block}
+  .rr .av.d{color:var(--green-l)}.rr .av.w{color:var(--gold)}.rr .av.a{color:var(--ink)}
+  .rr .av::after{content:"";position:absolute;inset:-1px;border:1px solid currentColor;opacity:0;animation:flick 4s steps(1) infinite}
+  .rr:nth-child(2) .av::after{animation-delay:1.3s}.rr:nth-child(3) .av::after{animation-delay:2.6s}
+  @keyframes flick{0%,92%{opacity:0}94%,98%{opacity:.6}}
+  .rr .nm b{display:block;font-family:var(--serif);font-size:16px;color:var(--ink);font-weight:600}
+  .rr .nm span{font-family:var(--mono);font-size:10.5px;color:var(--mute);text-transform:uppercase;letter-spacing:.07em}
+
+  .links{display:flex;flex-wrap:wrap;gap:11px;margin-top:auto;padding-top:8px}
+  .lnk{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--green);color:var(--green-l);position:relative;overflow:hidden;transition:color .22s}
+  .lnk span{position:relative;z-index:1}
+  .lnk::before{content:"";position:absolute;inset:0;background:var(--green);transform:translateY(101%);transition:transform .28s cubic-bezier(.16,.9,.2,1)}
+  .lnk:hover{color:#04120c}.lnk:hover::before{transform:translateY(0)}
+  .lnk.off{border-color:#e5484d;color:#ff6b70;cursor:default}
+  .lnk.off::before{background:#e5484d}
+  .lnk.off:hover{color:#0a0e0c}.lnk.off:hover::before{transform:translateY(0)}
 
   /* ===== FOOTER ===== */
-  footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,90px);background:var(--bg2)}
-  .foot-in{padding:clamp(40px,6vw,56px) 0 0;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-  .foot-brand{font-family:var(--disp);font-size:22px;color:#fff;font-weight:600;max-width:360px}
-  .foot-brand .s{display:block;font-family:var(--sans);font-size:13px;color:var(--mute);font-weight:400;margin-top:8px}
-  .flinks{display:flex;flex-direction:column;gap:11px;font-family:var(--mono);font-size:13px}
-  .flinks a{color:var(--body);text-decoration:none;transition:color .2s;display:inline-flex;align-items:center;gap:8px}
-  .flinks a::before{content:"→";color:var(--green);transition:transform .2s}
-  .flinks a:hover{color:#fff}
-  .flinks a:hover::before{transform:translateX(3px)}
-  .copy{border-top:1px solid var(--line);margin-top:40px;padding:20px 0;font-family:var(--mono);font-size:11.5px;color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer{border-top:0;margin-top:clamp(36px,5vw,56px);background:transparent}
+  .foot-in{padding:clamp(40px,5vw,60px) 0 clamp(32px,4vw,44px);display:grid;grid-template-columns:1fr auto auto;gap:clamp(24px,4vw,48px);align-items:end}
+  @media(max-width:680px){.foot-in{grid-template-columns:1fr;align-items:start}}
+  .status{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);padding:0;display:inline-flex;align-items:center;gap:11px;white-space:nowrap;align-self:end}
+  .status b{color:var(--green-l);font-weight:400}
+  .status .pd{position:relative;width:8px;height:8px}
+  .status .pd::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+  .status .pd::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid var(--green);animation:statusring 2.2s ease-out infinite}
+  @keyframes statusring{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+  @media(max-width:680px){.foot-in{grid-template-columns:1fr}}
+  .foot-in .big{font-family:var(--sans);font-weight:900;font-size:clamp(28px,5vw,54px);line-height:.9;letter-spacing:-.04em;color:var(--ink);text-transform:uppercase}
+  .big.rv-mask .l{display:block;overflow:hidden}
+  .big.rv-mask .l i{display:inline-block;font-style:normal;transform:translateY(105%);transition:transform .8s cubic-bezier(.16,.9,.2,1)}
+  .big.rv-mask .l:nth-child(2) i{transition-delay:.1s}
+  .big.rv-mask.in .l i{transform:none}
+  .foot-in .sub{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase;margin-top:14px}
+  .flinks{display:flex;align-items:center;gap:10px;align-self:end;color:var(--body)}
+  .flinks a{color:var(--body);transition:color .2s}
+  .flinks a:hover{color:var(--green-l)}
+  .copy{border-top:0;padding:16px 0;font-family:var(--mono);font-size:10.5px;color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;letter-spacing:.08em;text-transform:uppercase}
 </style>
 </head>
 <body>
 
-  <!-- ANIMATED BACKDROP -->
-  <div class="bg">
-    <div class="grid"></div>
-    <div class="mesh m1"></div><div class="mesh m2"></div><div class="mesh m3"></div>
-    <div class="scan"></div>
-    <i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i>
-  </div>
+  <div class="bg"><div class="grid"></div><div class="v v1"></div><div class="v v2"></div></div>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="wrap nav-in">
-      <a class="brand" href="#top"><span class="mk"></span> Akshay Rajagopal</a>
-      <div class="nav-links">
-        <a href="#platforms">// platforms</a>
-        <a href="#documents">// documents</a>
-        <a href="https://www.linkedin.com/in/a-rajagopal/" target="_blank" rel="noopener">// linkedin</a>
+
+
+  <header class="hero" id="top"><div class="wrap hero-in">
+    <div class="hero-copy">
+      <h1>
+        <span class="a"><span>Akshay</span></span>
+        <span class="a"><span>Rajagopal</span></span>
+      </h1>
+      <p class="lead">A finance, accounts and compliance professional focused on internal controls and governance — pairing that discipline with tools I build to turn raw financial data into clear, defensible decisions.</p>
+      <p class="loc">Based in Dubai, UAE</p>
+      <div class="hero-cta">
+        <a class="hbtn" href="https://www.linkedin.com/in/a-rajagopal/" target="_blank" rel="noopener"><span>Connect on LinkedIn ↗</span></a>
       </div>
     </div>
-  </nav>
+    <div class="constel" id="constel">
+      <canvas id="cnet"></canvas>
+    </div>
+  </div></header>
 
-  <!-- HERO -->
-  <header class="hero" id="top">
-    <div class="wrap hero-in">
-      <div class="kicker"><span class="dot"></span> Finance · Accounts · Compliance</div>
-      <h1><span class="l1">Akshay</span><span class="l2">Rajagopal —</span><span class="l3">forensic finance.</span></h1>
-      <p class="bio">A finance, accounts and compliance professional focused on internal controls and governance — pairing that discipline with tools I build to turn raw financial data into clear, defensible decisions.</p>
-      <div class="hero-actions">
-        <a class="hbtn p" href="#platforms">Inspect the work ↓</a>
-        <a class="hbtn s" href="https://www.linkedin.com/in/a-rajagopal/" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
+  <div class="wrap"><main>
+
+    <div class="shead rv" id="platforms"><h2>Platforms</h2><span class="rule"></span></div>
+    <div class="grid">
+
+      <div class="card rv" data-no="001">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <span class="tag live">● Live</span>
+        <h3>AureviaForge Engine</h3>
+        <div class="role">forensic_audit_analytics</div>
+        <div class="by">by Akshay Rajagopal</div>
+        <p>A forensic analytics engine that processes up to <b>100 million financial transactions in under a minute</b> — an entire enterprise's multi-year history, scanned end to end and surfaced for the red flags that actually matter. It runs ten investigative tests in parallel, scores and ranks every exception by risk so the most serious issues rise to the top, and lets you attach case notes against each finding and export the full audit trail to CSV for review or reporting. On top of that sits an AI layer you can <em>interrogate</em> in plain language — ask why a transaction was flagged, request a summary of a vendor's activity, or generate an executive-ready brief in seconds, all grounded in the underlying data rather than guesswork. The result is a faster, sharper first pass than any manual review, with every conclusion traceable back to the evidence.</p>
+        <div class="ledger">
+          <div class="lr"><span class="n">01</span><span class="nm">Benford's Law — 1st &amp; 2nd digit</span><span class="st">▸</span></div>
+          <div class="lr"><span class="n">02</span><span class="nm">Duplicate transaction detection</span><span class="st">▸</span></div>
+          <div class="lr"><span class="n">03</span><span class="nm">Threshold avoidance</span><span class="st">▸</span></div>
+          <div class="lr"><span class="n">04</span><span class="nm">Round-number analysis</span><span class="st">▸</span></div>
+          <div class="lr"><span class="n">05</span><span class="nm">Gap &amp; sequence analysis</span><span class="st">▸</span></div>
+          <div class="lr"><span class="n">06</span><span class="nm">Same-day payment anomalies</span><span class="st">▸</span></div>
+          <div class="lr"><span class="n">07</span><span class="nm">Vendor concentration risk</span><span class="st">▸</span></div>
+          <div class="lr"><span class="n">08</span><span class="nm">Statistical outliers</span><span class="st">▸</span></div>
+          <div class="lr"><span class="n">09</span><span class="nm">Weekend &amp; after-hours activity</span><span class="st">▸</span></div>
+        </div>
+        <div class="stack"><span class="chip">React + Vite</span><span class="chip">FastAPI</span><span class="chip">DuckDB</span><span class="chip">AI · Groq</span></div>
+        <div class="links"><a class="lnk" href="https://aureviaforge-engine-production.up.railway.app" target="_blank" rel="noopener"><span>Open live app ↗</span></a></div>
+      </div>
+
+      <div class="card rv" data-no="002">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <span class="tag beta">Beta</span>
+        <h3>Darvin &amp; the Pulse</h3>
+        <div class="role">adversarial_ai_tribunal</div>
+        <div class="by">by Akshay Rajagopal</div>
+        <p>Most tools just read your numbers and hand you a list. This one puts every finding <em>on trial</em>. Think of it as a courtroom built from three AI minds: one acts as the prosecutor and argues the transaction is suspicious, a second acts as the defence and argues it's perfectly innocent, and a third sits as the judge and decides who's right. Nothing reaches your final report until it has survived that fight. The result? You stop chasing false alarms, the real problems stand out clearly, and every conclusion comes with the reasoning behind it — so when someone asks <em>"how do you know?"</em>, you have an answer you can actually defend in front of a board, an auditor, or a regulator.</p>
+        <div class="roster">
+          <div class="rr"><div class="av d"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="20" cy="20" r="13"/><path d="M14 16.5l3.5 1.5M26 16.5l-3.5 1.5"/><circle cx="16" cy="19" r="1" fill="currentColor" stroke="none"/><circle cx="24" cy="19" r="1" fill="currentColor" stroke="none"/><path d="M16 26c2-1.6 6-1.6 8 0"/></svg></div><div class="nm"><b>Darvin</b><span>Fraud Examiner · Prosecution</span></div></div>
+          <div class="rr"><div class="av w"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="20" cy="20" r="13"/><path d="M14.5 17h3M22.5 17h3"/><circle cx="16" cy="19.5" r="1" fill="currentColor" stroke="none"/><circle cx="24" cy="19.5" r="1" fill="currentColor" stroke="none"/><path d="M16 25c2 1.6 6 1.6 8 0"/></svg></div><div class="nm"><b>Ward</b><span>Defense Counsel</span></div></div>
+          <div class="rr"><div class="av a"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="20" cy="20" r="13"/><path d="M13.5 11.5l2.5 3 4-3.5 4 3.5 2.5-3"/><circle cx="16" cy="20" r="1" fill="currentColor" stroke="none"/><circle cx="24" cy="20" r="1" fill="currentColor" stroke="none"/><path d="M16.5 25.5h7"/></svg></div><div class="nm"><b>Athena</b><span>Chief Arbiter · Verdict</span></div></div>
+        </div>
+        <div class="stack"><span class="chip">FastAPI · uvicorn</span><span class="chip">Groq + Gemini</span><span class="chip">Voice TTS</span></div>
+        <div class="links"><a class="lnk off"><span>Demo — coming soon</span></a></div>
+      </div>
+
+    </div>
+
+    <div class="shead rv" id="documents"><h2>Documents &amp; Models</h2><span class="rule"></span></div>
+    <div class="grid">
+
+      <div class="card rv" data-no="003">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <span class="tag doc">Spreadsheet</span>
+        <h3>Petty Cash Workbook</h3>
+        <div class="role">excel_control_model · AED</div>
+        <div class="by">by Akshay Rajagopal</div>
+        <p>A genuinely <b>complex control workbook</b> that holds up under the toughest financial situations. Built for real project finance in AED, it tracks every transaction, reconciles staff advances against actual spend, flags variances automatically, and rolls up to live closing balances — all <b>formula-driven</b>, so even with messy multi-party cash flows the books stay accurate without manual recalculation. A dedicated guide sheet makes it hand-off ready for any finance team.</p>
+        <div class="stack"><span class="chip">Transactions</span><span class="chip">Advances summary</span><span class="chip">Guide</span><span class="chip">Variance tracking</span></div>
+        <div class="links"><a class="lnk" href="assets/Petty_Cash_Workbook.xlsx" download><span>Download .xlsx ↓</span></a></div>
+      </div>
+
+      <div class="card rv" data-no="004">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <span class="tag doc">Deck</span>
+        <h3>Business Process Workflow</h3>
+        <div class="role">process_blueprint · 17 slides</div>
+        <div class="by">by Akshay Rajagopal</div>
+        <p>A complete operating blueprint for an app-based service business, mapped across 17 slides. It traces the full customer lifecycle — onboarding, subscription, training delivery — and layers in the operational backbone: <b>Six Sigma</b> quality control, data-security handling, and the decision flow all the way up to the board.</p>
+        <div class="stack"><span class="chip">Process modeling</span><span class="chip">Onboarding → Retention</span><span class="chip">Six Sigma</span><span class="chip">Governance</span></div>
+        <div class="links"><a class="lnk" href="assets/Business_Process_Workflow.pptx" download><span>Download .pptx ↓</span></a></div>
+      </div>
+
+    </div>
+
+  </main></div>
+
+  <footer><div class="wrap">
+    <div class="foot-in">
+      <div><div class="big rv-mask"><span class="l"><i>Let's talk</i></span><span class="l"><i>controls.</i></span></div><div class="sub">Open to forensic finance, audit &amp; compliance work</div><a class="hbtn" style="margin-top:26px" href="https://www.linkedin.com/in/a-rajagopal/" target="_blank" rel="noopener"><span>Connect on LinkedIn ↗</span></a></div>
+      <div class="status"><span class="pd"></span> <b>Available</b>&nbsp;for work</div>
+      <div class="flinks">
+        <a href="mailto:mr.akshay@aol.com" aria-label="Email" title="mr.akshay@aol.com" style="display:inline-flex;align-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 6 10 7 10-7"></path></svg></a>
       </div>
     </div>
-  </header>
-
-  <!-- MARQUEE -->
-  <div class="mq">
-    <div class="mq-t">Forensic Audit Analytics <span>◆</span> Internal Controls <span>◆</span> Benford's Law <span>◆</span> AI Investigation <span>◆</span> Governance Reporting <span>◆</span> Fraud Examination <span>◆</span> Compliance <span>◆</span> Forensic Audit Analytics <span>◆</span> Internal Controls <span>◆</span> Benford's Law <span>◆</span> AI Investigation <span>◆</span> Governance Reporting <span>◆</span> Fraud Examination <span>◆</span> Compliance <span>◆</span> </div>
-  </div>
-
-  <div class="wrap">
-    <main>
-
-      <!-- PLATFORMS -->
-      <div class="shead rv" id="platforms"><span class="ix">01</span><h2>Platforms</h2><span class="ln"></span></div>
-      <div class="grid">
-
-        <div class="card rv">
-          <div class="topbar"></div>
-          <div class="card-top">
-            <div><h3>AureviaForge Engine</h3><div class="role">forensic_audit_analytics</div><div class="by">by Akshay Rajagopal</div></div>
-            <span class="tag live"><span class="d"></span>Live</span>
-          </div>
-          <p>A forensic analytics engine that processes up to <b>100 million financial transactions in under a minute</b> on a local machine — a large enterprise's multi-year history, surfaced for the red flags that actually matter. It runs ten investigative tests, ranks every exception, and lets you attach case notes and export findings to CSV. An integrated AI layer goes further: <em>interrogate</em> the data in plain language and get structured investigative insights and executive summaries instantly.</p>
-          <div class="tests">
-            <span class="tt">Benford 1st &amp; 2nd digit</span><span class="tt">Duplicate detection</span><span class="tt">Threshold avoidance</span><span class="tt">Round-number</span><span class="tt">Gap &amp; sequence</span><span class="tt">Same-day anomalies</span><span class="tt">Vendor concentration</span><span class="tt">Statistical outliers</span><span class="tt">Weekend &amp; after-hours</span>
-          </div>
-          <div class="stack">
-            <span class="chip">React + Vite</span><span class="chip">FastAPI</span><span class="chip">DuckDB</span><span class="chip">AI · Groq</span>
-          </div>
-          <p class="note">Runs locally on a Mac. The live link is a trial deployment with limited upload capacity.</p>
-          <div class="links">
-            <a class="lnk solid" href="https://aureviaforge-engine-production.up.railway.app" target="_blank" rel="noopener">Open live app ↗</a>
-          </div>
-        </div>
-
-        <div class="card rv">
-          <div class="topbar"></div>
-          <div class="card-top">
-            <div><h3>Darvin &amp; the Pulse</h3><div class="role">adversarial_ai_tribunal</div><div class="by">by Akshay Rajagopal</div></div>
-            <span class="tag beta">Beta</span>
-          </div>
-          <p>Most tools read your data. This one <em>cross-examines</em> it. Every forensic finding goes on trial before it reaches a report — a three-agent AI tribunal where the evidence is prosecuted, defended, and judged. What survives isn't one model's first guess; it's a conclusion that has withstood argument from both sides. Fewer false positives, stronger findings, a verdict you can defend.</p>
-          <div class="agents">
-            <div class="ag"><div class="av d">D</div><div class="tx"><b>Darvin</b><span>Fraud Examiner · Prosecution</span></div></div>
-            <div class="ag"><div class="av p">W</div><div class="tx"><b>Ward</b><span>Defense Counsel</span></div></div>
-            <div class="ag"><div class="av a">A</div><div class="tx"><b>Athena</b><span>Chief Arbiter · Verdict</span></div></div>
-          </div>
-          <div class="stack">
-            <span class="chip">FastAPI · uvicorn</span><span class="chip">Groq + Gemini</span><span class="chip">Voice TTS</span>
-          </div>
-          <div class="links">
-            <a class="lnk off">Demo — coming soon</a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- DOCUMENTS -->
-      <div class="shead rv" id="documents"><span class="ix">02</span><h2>Documents &amp; Models</h2><span class="ln"></span></div>
-      <div class="grid">
-
-        <div class="card rv">
-          <div class="topbar"></div>
-          <div class="card-top">
-            <div><h3>Petty Cash Workbook</h3><div class="role">excel_control_model · AED</div><div class="by">by Akshay Rajagopal</div></div>
-            <span class="tag doc">Spreadsheet</span>
-          </div>
-          <p>A production-grade petty-cash control workbook for real project finance in AED. It tracks every transaction, reconciles staff advances against actual spend, flags variances automatically, and rolls up to live closing balances — all <b>formula-driven</b>, so the books stay accurate without manual recalculation. A dedicated guide sheet makes it hand-off ready.</p>
-          <div class="stack">
-            <span class="chip">Transactions</span><span class="chip">Advances summary</span><span class="chip">Guide</span><span class="chip">Variance tracking</span>
-          </div>
-          <div class="links">
-            <a class="lnk solid" href="assets/Petty_Cash_Workbook.xlsx" download>Download .xlsx ↓</a>
-          </div>
-        </div>
-
-        <div class="card rv">
-          <div class="topbar"></div>
-          <div class="card-top">
-            <div><h3>Business Process Workflow</h3><div class="role">process_blueprint · 17 slides</div><div class="by">by Akshay Rajagopal</div></div>
-            <span class="tag doc">Deck</span>
-          </div>
-          <p>A complete operating blueprint for an app-based service business, mapped across 17 slides. It traces the full customer lifecycle — onboarding, subscription, training delivery — and layers in the operational backbone: <b>Six Sigma</b> quality control, data-security handling, and the decision flow all the way up to the board.</p>
-          <div class="stack">
-            <span class="chip">Process modeling</span><span class="chip">Onboarding → Retention</span><span class="chip">Six Sigma</span><span class="chip">Governance</span>
-          </div>
-          <div class="links">
-            <a class="lnk solid" href="assets/Business_Process_Workflow.pptx" download>Download .pptx ↓</a>
-          </div>
-        </div>
-
-      </div>
-
-    </main>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap">
-      <div class="foot-in">
-        <div class="foot-brand">Akshay Rajagopal<span class="s">Finance, Accounts &amp; Compliance — building forensic tools that make financial data defensible.</span></div>
-        <div class="flinks">
-          <a href="https://www.linkedin.com/in/a-rajagopal/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-      <div class="copy"><span>© 2026 Akshay Rajagopal</span><span>Dubai · United Arab Emirates</span></div>
-    </div>
-  </footer>
+    <div class="copy"><span>© 2026 Akshay Rajagopal</span><span>Built &amp; designed solo, using AI</span></div>
+  </div></footer>
 
   <script>
-    // scroll reveal
-    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
-    document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%2*0.08)+'s';io.observe(el)});
+    // ===== Constellation Audit — cursor-interactive =====
+    (function(){
+      const wrap=document.getElementById('constel'); if(!wrap) return;
+      const cv=document.getElementById('cnet'), ctx=cv.getContext('2d');
+      let W,H,DPR,nodes=[],mouse={x:-999,y:-999,on:false},raf;
+      const GREEN='16,185,129', GOLD='245,158,11';
+      function size(){
+        DPR=Math.min(window.devicePixelRatio||1,2);
+        W=wrap.clientWidth; H=wrap.clientHeight;
+        cv.width=W*DPR; cv.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+      }
+      function init(){
+        size();
+        const n=Math.max(26,Math.round(W*H/9000));
+        nodes=[];
+        for(let i=0;i<n;i++){
+          nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.6+1.2,flag:Math.random()<0.12,ph:Math.random()*Math.PI*2});
+        }
+      }
+      function tick(t){
+        ctx.clearRect(0,0,W,H);
+        const LINK=118, MX=mouse.x, MY=mouse.y;
+        for(const p of nodes){
+          p.x+=p.vx; p.y+=p.vy;
+          if(p.x<0||p.x>W)p.vx*=-1;
+          if(p.y<0||p.y>H)p.vy*=-1;
+          if(mouse.on){ const dx=MX-p.x, dy=MY-p.y, d=Math.hypot(dx,dy); if(d<160){ p.x+=dx/d*0.5; p.y+=dy/d*0.5; } }
+        }
+        for(let i=0;i<nodes.length;i++){
+          for(let j=i+1;j<nodes.length;j++){
+            const a=nodes[i],b=nodes[j], dx=a.x-b.x, dy=a.y-b.y, d=Math.hypot(dx,dy);
+            if(d<LINK){
+              let al=(1-d/LINK)*.5; const gold=a.flag&&b.flag;
+              if(mouse.on){ const mx=(a.x+b.x)/2-MX, my=(a.y+b.y)/2-MY; if(Math.hypot(mx,my)<150) al=Math.min(.95,al+.4); }
+              ctx.strokeStyle='rgba('+(gold?GOLD:GREEN)+','+al+')';
+              ctx.lineWidth=gold?1.1:.7;
+              ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+            }
+          }
+        }
+        for(const p of nodes){
+          const pulse=mouse.on&&Math.hypot(MX-p.x,MY-p.y)<150;
+          const col=p.flag?GOLD:GREEN;
+          const glow=p.flag?(1.6+Math.sin(t/500+p.ph)*.5):1;
+          ctx.beginPath();ctx.arc(p.x,p.y,p.r*(pulse?1.7:1),0,Math.PI*2);
+          ctx.fillStyle='rgba('+col+','+(p.flag?.95:.8)+')';
+          ctx.shadowColor='rgba('+col+',1)';ctx.shadowBlur=(p.flag?9:5)*glow;
+          ctx.fill();ctx.shadowBlur=0;
+        }
+        raf=requestAnimationFrame(tick);
+      }
+      function setMouse(e){
+        const r=cv.getBoundingClientRect();
+        const cx=(e.touches?e.touches[0].clientX:e.clientX), cy=(e.touches?e.touches[0].clientY:e.clientY);
+        mouse.x=cx-r.left; mouse.y=cy-r.top; mouse.on=true;
+      }
+      wrap.addEventListener('mousemove',setMouse);
+      wrap.addEventListener('mouseleave',()=>mouse.on=false);
+      wrap.addEventListener('touchmove',setMouse,{passive:true});
+      window.addEventListener('resize',init);
+      const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      init(); if(!reduce) tick(0); else tick(0);
+    })();
+
+    // reveal
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%2*0.07)+'s';io.observe(el)});
+    const io2=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}})},{threshold:.4});
+    document.querySelectorAll('.rv-mask').forEach(el=>io2.observe(el));
   </script>
 
 </body>
