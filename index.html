@@ -54,15 +54,13 @@
   @keyframes bl{50%{opacity:.35}}
 
   /* ===== HERO — brutalist ===== */
-  .hero{position:relative}
-  .hero-in{padding:clamp(40px,6vw,80px) 0 clamp(44px,7vw,84px);display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(30px,4vw,60px);align-items:center}
-  @media(max-width:920px){.hero-in{grid-template-columns:1fr}}
+  .hero{position:relative;overflow:hidden;min-height:clamp(460px,70vh,720px);display:flex;align-items:center}
+  .hero-in{position:relative;z-index:2;width:100%;padding:clamp(48px,8vw,104px) 0 clamp(52px,8vw,96px)}
   .hero-copy{min-width:0}
-  .constel{position:relative;border:0;background:transparent;height:clamp(300px,34vw,440px);overflow:hidden}
-  @media(max-width:920px){.constel{display:none}}
+  .constel{position:absolute;inset:0;z-index:0;border:0;background:transparent;overflow:hidden;pointer-events:none}
   .constel canvas{display:block;width:100%;height:100%}
-  .hero h1{font-family:var(--sans);font-weight:900;font-size:clamp(46px,8.6vw,140px);line-height:.84;letter-spacing:-.04em;color:var(--ink);text-transform:uppercase}
-  .hero h1 .a{display:block;overflow:hidden;padding:0 .06em 0 0}
+  .hero h1{font-family:var(--sans);font-weight:900;font-size:clamp(44px,8vw,132px);line-height:.84;letter-spacing:-.04em;color:var(--ink);text-transform:uppercase}
+  .hero h1 .a{display:block;overflow:hidden;padding:0 .12em .04em 0}
   .hero h1 .a span{display:inline-block;transform:translateY(110%);animation:rise .9s cubic-bezier(.16,.9,.2,1) forwards}
   .hero h1 .a:nth-child(2) span{animation-delay:.12s;color:transparent;-webkit-text-stroke:1.5px var(--green);text-stroke:1.5px var(--green)}
   @keyframes rise{to{transform:none}}
@@ -147,14 +145,10 @@
 
   /* ===== FOOTER ===== */
   footer{border-top:0;margin-top:clamp(36px,5vw,56px);background:transparent}
-  .foot-in{padding:clamp(40px,5vw,60px) 0 clamp(32px,4vw,44px);display:grid;grid-template-columns:1fr auto auto;gap:clamp(24px,4vw,48px);align-items:end}
+  .foot-in{padding:clamp(40px,5vw,60px) 0 clamp(32px,4vw,44px);display:grid;grid-template-columns:1fr auto;gap:clamp(24px,4vw,48px);align-items:end}
+  @media(max-width:680px){.foot-in{grid-template-columns:1fr}}
+  .foot-right{display:flex;align-items:center;gap:clamp(18px,3vw,32px);align-self:end}
   @media(max-width:680px){.foot-in{grid-template-columns:1fr;align-items:start}}
-  .status{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);padding:0;display:inline-flex;align-items:center;gap:11px;white-space:nowrap;align-self:end}
-  .status b{color:var(--green-l);font-weight:400}
-  .status .pd{position:relative;width:8px;height:8px}
-  .status .pd::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
-  .status .pd::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid var(--green);animation:statusring 2.2s ease-out infinite}
-  @keyframes statusring{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}
   @media(max-width:680px){.foot-in{grid-template-columns:1fr}}
   .foot-in .big{font-family:var(--sans);font-weight:900;font-size:clamp(28px,5vw,54px);line-height:.9;letter-spacing:-.04em;color:var(--ink);text-transform:uppercase}
   .big.rv-mask .l{display:block;overflow:hidden}
@@ -162,7 +156,8 @@
   .big.rv-mask .l:nth-child(2) i{transition-delay:.1s}
   .big.rv-mask.in .l i{transform:none}
   .foot-in .sub{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase;margin-top:14px}
-  .flinks{display:flex;align-items:center;gap:10px;align-self:end;color:var(--body)}
+  .flinks{display:flex;align-items:center;gap:10px;color:var(--body)}
+  .flinks a{display:inline-flex;align-items:center}
   .flinks a{color:var(--body);transition:color .2s}
   .flinks a:hover{color:var(--green-l)}
   .copy{border-top:0;padding:16px 0;font-family:var(--mono);font-size:10.5px;color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;letter-spacing:.08em;text-transform:uppercase}
@@ -174,22 +169,22 @@
 
 
 
-  <header class="hero" id="top"><div class="wrap hero-in">
-    <div class="hero-copy">
-      <h1>
-        <span class="a"><span>Akshay</span></span>
-        <span class="a"><span>Rajagopal</span></span>
-      </h1>
-      <p class="lead">A finance, accounts and compliance professional focused on internal controls and governance — pairing that discipline with tools I build to turn raw financial data into clear, defensible decisions.</p>
-      <p class="loc">Based in Dubai, UAE</p>
-      <div class="hero-cta">
-        <a class="hbtn" href="https://www.linkedin.com/in/a-rajagopal/" target="_blank" rel="noopener"><span>Connect on LinkedIn ↗</span></a>
+  <header class="hero" id="top">
+    <div class="constel" id="constel"><canvas id="cnet"></canvas></div>
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <h1>
+          <span class="a"><span>Akshay</span></span>
+          <span class="a"><span>Rajagopal</span></span>
+        </h1>
+        <p class="lead">A finance, accounts and compliance professional focused on internal controls and governance — pairing that discipline with tools I build to turn raw financial data into clear, defensible decisions.</p>
+        <p class="loc">Based in Dubai, UAE</p>
+        <div class="hero-cta">
+          <a class="hbtn" href="https://www.linkedin.com/in/a-rajagopal/" target="_blank" rel="noopener"><span>Connect on LinkedIn ↗</span></a>
+        </div>
       </div>
     </div>
-    <div class="constel" id="constel">
-      <canvas id="cnet"></canvas>
-    </div>
-  </div></header>
+  </header>
 
   <div class="wrap"><main>
 
@@ -267,10 +262,11 @@
 
   <footer><div class="wrap">
     <div class="foot-in">
-      <div><div class="big rv-mask"><span class="l"><i>Let's talk</i></span><span class="l"><i>controls.</i></span></div><div class="sub">Open to forensic finance, audit &amp; compliance work</div><a class="hbtn" style="margin-top:26px" href="https://www.linkedin.com/in/a-rajagopal/" target="_blank" rel="noopener"><span>Connect on LinkedIn ↗</span></a></div>
-      <div class="status"><span class="pd"></span> <b>Available</b>&nbsp;for work</div>
-      <div class="flinks">
-        <a href="mailto:mr.akshay@aol.com" aria-label="Email" title="mr.akshay@aol.com" style="display:inline-flex;align-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 6 10 7 10-7"></path></svg></a>
+      <div><div class="big rv-mask"><span class="l"><i>Let's talk</i></span><span class="l"><i>controls.</i></span></div><div class="sub">Open to forensic finance, accounting, audit &amp; compliance work</div><a class="hbtn" style="margin-top:26px" href="https://www.linkedin.com/in/a-rajagopal/" target="_blank" rel="noopener"><span>Connect on LinkedIn ↗</span></a></div>
+      <div class="foot-right">
+        <div class="flinks">
+          <a href="mailto:mr.akshay@aol.com" aria-label="Email" title="mr.akshay@aol.com"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 6 10 7 10-7"></path></svg></a>
+        </div>
       </div>
     </div>
     <div class="copy"><span>© 2026 Akshay Rajagopal</span><span>Built &amp; designed solo, using AI</span></div>
@@ -290,7 +286,7 @@
       }
       function init(){
         size();
-        const n=Math.max(26,Math.round(W*H/9000));
+        const n=Math.max(40,Math.round(W*H/5200));
         nodes=[];
         for(let i=0;i<n;i++){
           nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.6+1.2,flag:Math.random()<0.12,ph:Math.random()*Math.PI*2});
@@ -298,7 +294,7 @@
       }
       function tick(t){
         ctx.clearRect(0,0,W,H);
-        const LINK=118, MX=mouse.x, MY=mouse.y;
+        const LINK=140, MX=mouse.x, MY=mouse.y;
         for(const p of nodes){
           p.x+=p.vx; p.y+=p.vy;
           if(p.x<0||p.x>W)p.vx*=-1;
@@ -331,11 +327,12 @@
       function setMouse(e){
         const r=cv.getBoundingClientRect();
         const cx=(e.touches?e.touches[0].clientX:e.clientX), cy=(e.touches?e.touches[0].clientY:e.clientY);
-        mouse.x=cx-r.left; mouse.y=cy-r.top; mouse.on=true;
+        if(cx>=r.left&&cx<=r.right&&cy>=r.top&&cy<=r.bottom){
+          mouse.x=cx-r.left; mouse.y=cy-r.top; mouse.on=true;
+        } else { mouse.on=false; }
       }
-      wrap.addEventListener('mousemove',setMouse);
-      wrap.addEventListener('mouseleave',()=>mouse.on=false);
-      wrap.addEventListener('touchmove',setMouse,{passive:true});
+      window.addEventListener('mousemove',setMouse,{passive:true});
+      window.addEventListener('touchmove',setMouse,{passive:true});
       window.addEventListener('resize',init);
       const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
       init(); if(!reduce) tick(0); else tick(0);
