@@ -161,6 +161,55 @@
   .flinks a{color:var(--body);transition:color .2s}
   .flinks a:hover{color:var(--green-l)}
   .copy{border-top:0;padding:16px 0;font-family:var(--mono);font-size:10.5px;color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;letter-spacing:.08em;text-transform:uppercase}
+  /* Darvin concept demo */
+  .demo-btn{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--green);color:var(--green-l);background:transparent;cursor:pointer;position:relative;overflow:hidden;transition:color .22s,background .22s}
+  .demo-btn:hover{background:var(--green);color:#04130d}
+  .dm-ov{position:fixed;inset:0;z-index:999;background:rgba(2,4,3,.86);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px}
+  .dm-ov.on{display:flex}
+  .dm-box{width:min(680px,100%);max-height:90vh;overflow:auto;background:var(--panel);border:1px solid var(--line2);padding:clamp(22px,4vw,40px);position:relative}
+  .dm-box::-webkit-scrollbar{width:8px}.dm-box::-webkit-scrollbar-thumb{background:var(--line2)}
+  .dm-x{position:absolute;top:14px;right:16px;background:none;border:0;color:var(--body);font-size:24px;line-height:1;cursor:pointer;padding:4px 8px}
+  .dm-x:hover{color:var(--ink)}
+  .dm-session{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(245,158,11,.35);padding:6px 12px;margin-bottom:18px}
+  .dm-session .dm-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);animation:dmpulse 1.6s ease-in-out infinite}
+  @keyframes dmpulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .dm-caseno{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .dm-bub p.caret::after{content:'▋';color:var(--green-l);margin-left:1px;animation:dmcaret .8s steps(1) infinite}
+  .dm-bub .caret::after{content:'▋';color:var(--green-l);margin-left:1px;animation:dmcaret .8s steps(1) infinite}
+  @keyframes dmcaret{0%,100%{opacity:1}50%{opacity:0}}
+  .dm-bub b .mdl{font-family:var(--mono);font-size:9px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);border:1px solid var(--line2);padding:2px 6px;margin-left:8px;vertical-align:middle}
+  .dm-think{display:inline-flex;gap:5px;padding:6px 2px}
+  .dm-think span{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.35;animation:dmthink 1.1s ease-in-out infinite}
+  .dm-msg.d .dm-think{color:var(--green-l)}.dm-msg.w .dm-think{color:var(--gold)}.dm-msg.a .dm-think{color:var(--ink)}
+  .dm-think span:nth-child(2){animation-delay:.18s}.dm-think span:nth-child(3){animation-delay:.36s}
+  @keyframes dmthink{0%,100%{opacity:.25;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+  .dm-bub .emote{font-style:italic;color:var(--mute)}
+  .dm-msg.d .dm-bub .emote{color:#6fe6b8}.dm-msg.w .dm-bub .emote{color:#f6c970}.dm-msg.a .dm-bub .emote{color:#c9d4cd}
+  .dm-h{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--green-l);margin-bottom:6px}
+  .dm-sub{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.08em;margin-bottom:22px}
+  .dm-case{border:1px solid var(--line2);border-left:3px solid var(--gold);padding:14px 16px;margin-bottom:22px;font-size:13.5px;color:var(--ink);line-height:1.5}
+  .dm-case b{color:var(--gold)}
+  .dm-feed{display:flex;flex-direction:column;gap:14px;min-height:120px}
+  .dm-msg{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s}
+  .dm-msg.show{opacity:1;transform:none}
+  .dm-av{width:40px;height:40px;border:1px solid var(--line2);display:flex;align-items:center;justify-content:center}
+  .dm-av svg{width:30px;height:30px}
+  .dm-av.d{color:var(--green-l)}.dm-av.w{color:var(--gold)}.dm-av.a{color:var(--ink)}
+  .dm-bub b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+  .dm-msg.d .dm-bub b{color:var(--green-l)}.dm-msg.w .dm-bub b{color:var(--gold)}.dm-msg.a .dm-bub b{color:var(--ink)}
+  .dm-bub p{font-size:13.5px;line-height:1.55;color:var(--body);margin:0}
+  .dm-verdict{margin-top:6px;border:1px solid var(--line2);border-left:3px solid var(--green);padding:13px 16px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink)}
+  .dm-verdict .rk{color:var(--gold);font-weight:700}
+  .dm-meter{margin:13px 0 4px}
+  .dm-meter-track{height:8px;background:var(--line);border:1px solid var(--line2);position:relative;overflow:hidden}
+  .dm-meter-fill{height:100%;background:linear-gradient(90deg,var(--green) 0%,var(--gold) 70%,#e5484d 100%);background-size:260px 100%;transition:width .1s linear}
+  .dm-meter-lab{display:flex;justify-content:space-between;margin-top:7px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+  .dm-meter-val{color:var(--gold);font-weight:700}
+  .dm-verdict-note{margin-top:10px;font-size:12px;line-height:1.5;color:var(--body);text-transform:none;letter-spacing:0;font-family:var(--mono)}
+  .dm-foot{margin-top:24px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .dm-replay{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:10px 18px;border:1px solid var(--line2);color:var(--body);background:transparent;cursor:pointer;transition:border-color .2s,color .2s}
+  .dm-replay:hover{border-color:var(--green);color:var(--green-l)}
+  .dm-note{font-family:var(--mono);font-size:10px;color:var(--mute);letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -225,8 +274,8 @@
           <div class="rr"><div class="av w"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="20" cy="20" r="13"/><path d="M14.5 17h3M22.5 17h3"/><circle cx="16" cy="19.5" r="1" fill="currentColor" stroke="none"/><circle cx="24" cy="19.5" r="1" fill="currentColor" stroke="none"/><path d="M16 25c2 1.6 6 1.6 8 0"/></svg></div><div class="nm"><b>Ward</b><span>Defense Counsel</span></div></div>
           <div class="rr"><div class="av a"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="20" cy="20" r="13"/><path d="M13.5 11.5l2.5 3 4-3.5 4 3.5 2.5-3"/><circle cx="16" cy="20" r="1" fill="currentColor" stroke="none"/><circle cx="24" cy="20" r="1" fill="currentColor" stroke="none"/><path d="M16.5 25.5h7"/></svg></div><div class="nm"><b>Athena</b><span>Chief Arbiter · Verdict</span></div></div>
         </div>
-        <div class="stack"><span class="chip">FastAPI · uvicorn</span><span class="chip">Groq + Gemini</span><span class="chip">Voice TTS</span></div>
-        <div class="links"><a class="lnk off"><span>Demo — coming soon</span></a></div>
+        <div class="stack"><span class="chip">FastAPI · uvicorn</span><span class="chip">Groq · Gemini · DeepSeek</span><span class="chip">Voice TTS</span></div>
+        <div class="links"><a class="lnk off"><span>Coming soon</span></a><button class="lnk demo-btn" type="button" onclick="openDarvinDemo()"><span>▶ Watch concept demo</span></button></div>
       </div>
 
     </div>
@@ -345,5 +394,109 @@
     document.querySelectorAll('.rv-mask').forEach(el=>io2.observe(el));
   </script>
 
+<div class="dm-ov" id="darvinDemo" role="dialog" aria-modal="true" aria-label="Darvin concept demo">
+  <div class="dm-box">
+    <button class="dm-x" type="button" onclick="closeDarvinDemo()" aria-label="Close">×</button>
+    <div class="dm-session"><span class="dm-dot"></span>The Tribunal is in session</div>
+    <div class="dm-h">Darvin &amp; the Pulse — concept demo</div>
+    <div class="dm-sub">A single flagged transaction, put on trial</div>
+    <div class="dm-case">
+      <span class="dm-caseno">CASE · FINDING #INV-4471</span>
+      AED 49,500 paid to <b>Crestline Supplies</b> — sits AED 500 under the AED 50,000 dual-approval threshold, and clears the same day as a near-identical invoice from the prior week.
+    </div>
+    <div class="dm-feed" id="dmFeed"></div>
+    <div class="dm-foot">
+      <button class="dm-replay" type="button" onclick="playDarvinDemo()">↻ Replay</button>
+      <span class="dm-note">Illustrative walkthrough of the concept — not live app footage.</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const FACE={
+      d:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="20" cy="20" r="13"/><path d="M14 16.5l3.5 1.5M26 16.5l-3.5 1.5"/><circle cx="16" cy="19" r="1" fill="currentColor" stroke="none"/><circle cx="24" cy="19" r="1" fill="currentColor" stroke="none"/><path d="M16 26c2-1.6 6-1.6 8 0"/></svg>',
+      w:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="20" cy="20" r="13"/><path d="M14.5 17h3M22.5 17h3"/><circle cx="16" cy="19.5" r="1" fill="currentColor" stroke="none"/><circle cx="24" cy="19.5" r="1" fill="currentColor" stroke="none"/><path d="M16 25c2 1.6 6 1.6 8 0"/></svg>',
+      a:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="20" cy="20" r="13"/><path d="M13.5 11.5l2.5 3 4-3.5 4 3.5 2.5-3"/><circle cx="16" cy="20" r="1" fill="currentColor" stroke="none"/><circle cx="24" cy="20" r="1" fill="currentColor" stroke="none"/><path d="M16.5 25.5h7"/></svg>'
+    };
+    const MODEL={d:'Groq · Llama 3.3',w:'Gemini 1.5',a:'DeepSeek R1'};
+    const SCRIPT=[
+      {r:'d',who:'Darvin · Prosecution',em:'Hmm.',t:'The Tribunal will note the amount: AED 49,500 — precisely AED 500 beneath the dual-approval threshold. A payment engineered to fall just under a control is the textbook signature of threshold avoidance.'},
+      {r:'d',who:'Darvin · Prosecution',em:'And there is more —',t:'This is not isolated. A near-identical payment to the same vendor cleared just seven days earlier. Repetition right below a limit is structuring. I move to flag this transaction.'},
+      {r:'w',who:'Ward · Defense',em:'Ahh, but—',t:'Context before suspicion, please. Crestline is on a fixed weekly retainer of AED 49,500. The figure is set by contract — it was never chosen to dodge a limit.'},
+      {r:'w',who:'Ward · Defense',em:'Come now.',t:'Recurring, identical weekly amounts are simply the shape of a retainer, not evidence of intent. The nearness to the threshold is coincidence, not design.'},
+      {r:'d',who:'Darvin · Prosecution',em:'Really?',t:'A contract explains the amount. It does not explain why both invoices were released on the very same day, nor why neither carries a second authorising signature.'},
+      {r:'w',who:'Ward · Defense',em:'...awwf, fine.',t:'Conceded — those are process gaps, not proof of fraud. The defense asks the Tribunal to separate a weak control from a dishonest act.'},
+      {r:'a',who:'Athena · Chief Arbiter',em:'Well, the Tribunal has heard enough.',t:'The amount is substantiated by contract, and the structuring claim is unproven. Yet the same-day release and the absent secondary sign-off remain genuinely unresolved. Weighing both sides, the Tribunal places the probability of fraud at 38 percent.',verdict:true}
+    ];
+    let timers=[], typing=null;
+    function clearAll(){timers.forEach(clearTimeout);timers=[];if(typing){clearInterval(typing);typing=null;}}
+    function typeInto(el, text, done){
+      let i=0; el.classList.add('caret');
+      typing=setInterval(()=>{
+        i++; el.textContent=text.slice(0,i);
+        const box=document.querySelector('.dm-box'); if(box) box.scrollTop=box.scrollHeight;
+        if(i>=text.length){clearInterval(typing);typing=null;el.classList.remove('caret');done&&done();}
+      }, 16);
+    }
+    function runStep(feed, idx){
+      if(idx>=SCRIPT.length) return;
+      const m=SCRIPT[idx];
+      const row=document.createElement('div');
+      row.className='dm-msg '+m.r+' show';
+      row.innerHTML='<div class="dm-av '+m.r+'">'+FACE[m.r]+'</div><div class="dm-bub"><b>'+m.who+' <span class="mdl">'+MODEL[m.r]+'</span></b><div class="dm-think"><span></span><span></span><span></span></div></div>';
+      feed.appendChild(row);
+      const bub=row.querySelector('.dm-bub');
+      const box=document.querySelector('.dm-box'); if(box) box.scrollTop=box.scrollHeight;
+      const thinkMs=700+Math.random()*500;
+      timers.push(setTimeout(()=>{
+        const th=bub.querySelector('.dm-think'); if(th) th.remove();
+        const para=document.createElement('p');
+        if(m.em){ const e=document.createElement('span'); e.className='emote'; e.textContent=m.em+' '; para.appendChild(e); }
+        const tx=document.createElement('span'); para.appendChild(tx);
+        bub.appendChild(para);
+        if(box) box.scrollTop=box.scrollHeight;
+        typeInto(tx, m.t, ()=>{
+          if(m.verdict){
+            const v=document.createElement('div');
+            v.className='dm-verdict';
+            v.innerHTML='VERDICT — <span class="rk">MEDIUM RISK</span>'+
+              '<div class="dm-meter"><div class="dm-meter-track"><div class="dm-meter-fill" style="width:0%"></div></div><div class="dm-meter-lab"><span>Fraud probability</span><span class="dm-meter-val">0%</span></div></div>'+
+              '<div class="dm-verdict-note">Hold for review: obtain the approval trail and confirm the same-day payment timing before this finding is cleared.</div>';
+            bub.appendChild(v);
+            if(box) box.scrollTop=box.scrollHeight;
+            const fill=v.querySelector('.dm-meter-fill'), val=v.querySelector('.dm-meter-val');
+            const target=38; let cur=0;
+            timers.push(setTimeout(()=>{
+              const grow=setInterval(()=>{
+                cur+=2; if(cur>=target){cur=target;clearInterval(grow);}
+                fill.style.width=cur+'%'; val.textContent=cur+'%';
+                if(box) box.scrollTop=box.scrollHeight;
+              },28);
+            },300));
+          }
+          timers.push(setTimeout(()=>runStep(feed, idx+1), 560));
+        });
+      }, thinkMs));
+    }
+    window.playDarvinDemo=function(){
+      clearAll();
+      const feed=document.getElementById('dmFeed'); feed.innerHTML='';
+      timers.push(setTimeout(()=>runStep(feed,0), 250));
+    };
+    window.openDarvinDemo=function(){
+      document.getElementById('darvinDemo').classList.add('on');
+      document.body.style.overflow='hidden';
+      playDarvinDemo();
+    };
+    window.closeDarvinDemo=function(){
+      clearAll();
+      document.getElementById('darvinDemo').classList.remove('on');
+      document.body.style.overflow='';
+    };
+    document.getElementById('darvinDemo').addEventListener('click',function(e){ if(e.target===this) closeDarvinDemo(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDarvinDemo(); });
+  })();
+</script>
 </body>
 </html>
