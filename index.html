@@ -155,7 +155,7 @@
   .big.rv-mask .l i{display:inline-block;font-style:normal;transform:translateY(105%);transition:transform .8s cubic-bezier(.16,.9,.2,1)}
   .big.rv-mask .l:nth-child(2) i{transition-delay:.1s}
   .big.rv-mask.in .l i{transform:none}
-  .foot-in .sub{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase;margin-top:14px}
+  .foot-in .sub{font-family:var(--mono);font-size:11px;color:#8aa6c0;letter-spacing:.1em;text-transform:uppercase;margin-top:14px}
   .flinks{display:flex;align-items:center;gap:10px;color:var(--body)}
   .flinks a{display:inline-flex;align-items:center}
   .flinks a{color:var(--body);transition:color .2s}
@@ -210,6 +210,15 @@
   .dm-replay{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:10px 18px;border:1px solid var(--line2);color:var(--body);background:transparent;cursor:pointer;transition:border-color .2s,color .2s}
   .dm-replay:hover{border-color:var(--green);color:var(--green-l)}
   .dm-note{font-family:var(--mono);font-size:10px;color:var(--mute);letter-spacing:.06em}
+  /* About (click to reveal, bottom) */
+  .aboutme{margin-bottom:clamp(40px,6vw,72px)}
+  .aboutme-btn{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-l);background:transparent;border:1px solid var(--green);padding:13px 22px;cursor:pointer;transition:background .22s,color .22s}
+  .aboutme-btn:hover{background:var(--green);color:#04130d}
+  .aboutme-body{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.16,.8,.2,1),opacity .5s;opacity:0}
+  .aboutme.open .aboutme-body{max-height:1200px;opacity:1}
+  .aboutme-inner{padding-top:26px;max-width:820px}
+  .aboutme-inner p{font-size:clamp(15px,2vw,17px);line-height:1.7;color:#d6e0db;margin:0 0 16px}
+  .aboutme-inner p:last-child{margin-bottom:0}
 </style>
 </head>
 <body>
@@ -307,11 +316,23 @@
 
     </div>
 
+    <div class="shead rv" id="about"><h2>About</h2><span class="rule"></span></div>
+    <div class="aboutme rv">
+      <button class="aboutme-btn" id="aboutBtn" type="button" onclick="toggleAbout()" aria-expanded="false"><span id="aboutBtnTxt">▸ Read about me</span></button>
+      <div class="aboutme-body" id="aboutBody">
+        <div class="aboutme-inner">
+          <p>A natural leader at my core — self-reliant, decisive, and most at home when I own a problem end to end. Taking charge comes instinctively to me, and I pair it with a steady ethical compass that runs through everything I do: I'd far rather get something right and defensible than fast and loose.</p>
+          <p>I'm a Cochin-born Keralite with family roots in Alappuzha, and I studied Finance &amp; Taxation at Mahatma Gandhi University. My real edge has always lived in the work itself — a sharp eye for detail, an instinct for where the numbers don't reconcile, and an uncompromising sense of integrity. I'm genuinely passionate about fraud examination, internal controls and compliance; I treat them as a craft rather than a job description, and I'm drawn to the exact point where disciplined controls thinking meets real investigation.</p>
+          <p>What I think sets me apart is that I don't just apply controls — I build the tools that enforce them. I've gone on to design and build AI-powered forensic analytics platforms that turn raw financial data into clear, defensible decisions, bridging finance and technology in a way few in my field do. I'm adaptable and easy to work alongside, yet I bring the discipline to carry things through to the end — and I'm always on the lookout for the next problem worth solving.</p>
+        </div>
+      </div>
+    </div>
+
   </main></div>
 
   <footer><div class="wrap">
     <div class="foot-in">
-      <div><div class="big rv-mask"><span class="l"><i>Let's talk</i></span><span class="l"><i>controls.</i></span></div><div class="sub">Open to forensic finance, accounting, audit &amp; compliance work</div><a class="hbtn" style="margin-top:26px" href="https://www.linkedin.com/in/a-rajagopal/" target="_blank" rel="noopener"><span>Connect on LinkedIn ↗</span></a></div>
+      <div><div class="big rv-mask"><span class="l"><i>Let's talk</i></span><span class="l"><i>controls.</i></span></div><div class="sub">Open to forensic finance, accounting, fraud audit &amp; compliance work</div><a class="hbtn" style="margin-top:26px" href="https://www.linkedin.com/in/a-rajagopal/" target="_blank" rel="noopener"><span>Connect on LinkedIn ↗</span></a></div>
       <div class="foot-right">
         <div class="flinks">
           <a href="mailto:mr.akshay@aol.com" aria-label="Email" title="mr.akshay@aol.com"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 6 10 7 10-7"></path></svg></a>
@@ -335,7 +356,7 @@
       }
       function init(){
         size();
-        const n=Math.max(52,Math.round(W*H/4100));
+        const n=Math.max(56,Math.round(W*H/3750));
         nodes=[];
         for(let i=0;i<n;i++){
           nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.6+1.2,flag:Math.random()<0.12,ph:Math.random()*Math.PI*2});
@@ -343,7 +364,7 @@
       }
       function tick(t){
         ctx.clearRect(0,0,W,H);
-        const LINK=150, MX=mouse.x, MY=mouse.y;
+        const LINK=152, MX=mouse.x, MY=mouse.y;
         for(const p of nodes){
           p.x+=p.vx; p.y+=p.vy;
           if(p.x<0||p.x>W)p.vx*=-1;
@@ -497,6 +518,14 @@
     document.getElementById('darvinDemo').addEventListener('click',function(e){ if(e.target===this) closeDarvinDemo(); });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDarvinDemo(); });
   })();
+</script>
+<script>
+  function toggleAbout(){
+    var w=document.querySelector('.aboutme'), b=document.getElementById('aboutBtn'), t=document.getElementById('aboutBtnTxt');
+    var open=w.classList.toggle('open');
+    b.setAttribute('aria-expanded', open?'true':'false');
+    t.textContent = open ? '▾ Hide' : '▸ Read about me';
+  }
 </script>
 </body>
 </html>
